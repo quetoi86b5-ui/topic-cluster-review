@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Content Plan Overview</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Content Plan Overview</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 07: Content Planning Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Kế hoạch nội dung (Content Plan) là gì? Khác biệt so với Topical Map</a></li><li><a href="#s2">Sáu thành phần cốt lõi cấu tạo nên một Content Plan chuyên nghiệp</a></li><li><a href="#s3">Tám trạng thái vận hành bài viết trong bảng tính (Content Plan Status)</a></li><li><a href="#s4">Nâng cấp lên các nền tảng quản trị dự án dạng Kanban: Nifty, Trello, Asana, ClickUp</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Kế hoạch nội dung (Content Plan) là gì? Khác biệt so với Topical Map</h2><p>Trong bài học này, Yoyao phân định rành mạch sự khác biệt giữa hai khái niệm thường bị đánh đồng: <b>Topical Map</b> và <b>Content Plan</b>.</p>
+<p>Nếu như <i>Topical Map</i> là bản thiết kế kiến trúc thuần túy mô tả cấu trúc phân cấp các chủ đề và từ khóa; thì <b>Content Plan (Kế hoạch nội dung)</b> là tài liệu tác nghiệp quản lý và điều hành toàn bộ quy trình: từ việc lập lịch trình sản xuất, phân công người viết, duyệt bài, xuất bản cho đến bảo trì cập nhật nội dung theo thời gian.</p>
+<p>Một kế hoạch nội dung chuẩn mực giúp đồng bộ hoàn hảo giữa mục tiêu kinh doanh tổng thể của thương hiệu với nhu cầu thực tế của độc giả, đảm bảo quy trình sản xuất luôn diễn ra trơn tru và hiệu quả nhất.</p><figure><img src="photos/m07-l03-02.jpg" alt="Content Plan là tài liệu chiến lược quản lý toàn bộ quy trình từ ý tưởng, sản xuất, phân phối đến bảo trì nội dung." loading="lazy"><figcaption>Content Plan là tài liệu chiến lược quản lý toàn bộ quy trình từ ý tưởng, sản xuất, phân phối đến bảo trì nội dung.</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. Sáu thành phần cốt lõi cấu tạo nên một Content Plan chuyên nghiệp</h2><p>Yoyao liệt kê 6 thành phần bắt buộc phải có trong một bản kế hoạch nội dung chuyên nghiệp:</p>
+<ol>
+  <li><b>Workflow (Quy trình làm việc)</b>: Toàn bộ các bước chuyển tiếp rõ ràng từ khâu lên ý tưởng, viết dàn ý (brief), sản xuất bài, biên tập rà soát, xuất bản lên CMS, phân phối đa kênh cho đến bảo trì định kỳ.</li>
+  <li><b>Editorial Calendar (Lịch biên tập)</b>: Lịch trình xuất bản cụ thể với các mốc thời gian rõ ràng cho từng bài viết.</li>
+  <li><b>Team (Cơ cấu đội ngũ)</b>: Xác định rõ trách nhiệm của từng cá nhân: người viết bài (writers), biên tập viên (editors) và trợ lý ảo (VAs).</li>
+  <li><b>Tools & Budgets (Công cụ và Ngân sách)</b>: Tài nguyên công cụ hỗ trợ, ngân sách chi trả cho người viết và đường dẫn lưu trữ tài liệu.</li>
+  <li><b>Content Goals (Mục tiêu nội dung)</b>: Mục tiêu cụ thể của từng bài viết (kéo traffic, thu thập leads hay bán hàng).</li>
+  <li><b>Content Performance (Đo lường hiệu suất)</b>: Các chỉ số KPI theo dõi sau khi xuất bản (thứ hạng, lượt xem, thời gian đọc).</li>
+</ol><figure><img src="photos/m07-l03-07.jpg" alt="Sáu trụ cột của Content Plan: Quy trình làm việc, Lịch biên tập, Đội ngũ, Công cụ/Ngân sách, Mục tiêu và Hiệu suất." loading="lazy"><figcaption>Sáu trụ cột của Content Plan: Quy trình làm việc, Lịch biên tập, Đội ngũ, Công cụ/Ngân sách, Mục tiêu và Hiệu suất.</figcaption></figure></section><section class="seg" id="s3" data-src="T02 T03"><h2>3. Tám trạng thái vận hành bài viết trong bảng tính (Content Plan Status)</h2><p>Để quản lý hàng trăm bài viết đang sản xuất đồng thời mà không bị hỗn loạn, Yoyao thiết lập một cột <b>Status (Trạng thái)</b> với 8 bước tiến trình chuẩn mực:</p>
+<ul>
+  <li><code>Researching</code>: Đang nghiên cứu tài liệu và đối thủ.</li>
+  <li><code>Writing</code>: Cây bút đang tiến hành viết bản thảo.</li>
+  <li><code>In Editing</code>: Đang trong quá trình biên tập viên rà soát lỗi chính tả và hành văn.</li>
+  <li><code>Edited</code>: Đã biên tập xong văn bản.</li>
+  <li><code>Optimized</code>: Đã tối ưu hóa các từ khóa On-page trên các phần mềm như Frase hoặc SurferSEO.</li>
+  <li><code>Images Done</code>: Đã thiết kế xong ảnh bìa và chụp ảnh minh họa bài viết.</li>
+  <li><code>WordPress Draft</code>: Đã đưa bài viết lên hệ thống CMS dưới dạng bản nháp để kiểm tra định dạng hiển thị.</li>
+  <li><code>Published</code>: Bài viết chính thức được xuất bản công khai lên website.</li>
+</ul><figure><img src="photos/m07-l03-09.jpg" alt="Tám trạng thái vận hành bài viết: Researching, Writing, In Editing, Edited, Optimized, Images Done, Draft, Published." loading="lazy"><figcaption>Tám trạng thái vận hành bài viết: Researching, Writing, In Editing, Edited, Optimized, Images Done, Draft, Published.</figcaption></figure></section><section class="seg" id="s4" data-src="T03 T04"><h2>4. Nâng cấp lên các nền tảng quản trị dự án dạng Kanban: Nifty, Trello, Asana, ClickUp</h2><p>Bên cạnh việc theo dõi trên bảng tính Google Sheets, khi đội ngũ phát triển quy mô lớn từ 3 đến 5 người trở lên, Yoyao khuyên bạn nên chuyển đổi quy trình sang các phần mềm quản trị dự án hiện đại có giao diện <b>Bảng Kanban (Kanban Boards)</b> như <i>Nifty PM, Trello, Asana hoặc ClickUp</i>.</p>
+<p>Mỗi bài viết sẽ là một thẻ tác vụ (Task card) di chuyển linh hoạt qua từng cột trạng thái. Bạn có thể đính kèm liên kết tài liệu Frase, chỉ định người viết, đặt hạn chót (Deadline) và thảo luận trực tiếp trên thẻ bài viết. Sự kết hợp giữa bảng tính lưu trữ dữ liệu và bảng Kanban điều phối công việc sẽ tạo nên một cỗ máy sản xuất nội dung vận hành mượt mà và chính xác tuyệt đối.</p>
+<p>Điều này giúp người quản lý dự án có thể bao quát toàn bộ tiến độ sản xuất trong nháy mắt, kịp thời phát hiện các điểm nghẽn cổ chai và thúc đẩy tốc độ xuất bản của toàn bộ website lên tầm cao mới.</p><figure><img src="photos/m07-l03-14.jpg" alt="Ứng dụng các bảng Kanban hiện đại trên Nifty, Trello, Asana hoặc ClickUp để quản lý quy trình sản xuất nội dung." loading="lazy"><figcaption>Ứng dụng các bảng Kanban hiện đại trên Nifty, Trello, Asana hoặc ClickUp để quản lý quy trình sản xuất nội dung.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 03-Content Plan Overview (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
