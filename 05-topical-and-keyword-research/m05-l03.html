@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Competitor Research and Analysis</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Competitor Research and Analysis</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 05: Topical and Keyword Research</p>
+  <nav class="toc"><ol><li><a href="#s1">Bản chất của nghiên cứu đối thủ: Tìm ra khoảng trống chủ đề và từ khóa quan trọng</a></li><li><a href="#s2">Sự biến đổi của trang kết quả tìm kiếm (SERP) giữa năm 2023 và 2024</a></li><li><a href="#s3">Phân tích tính năng trải nghiệm: Bộ lọc đa năng (Faceted Navigation) của đối thủ</a></li><li><a href="#s4">Sử dụng toán tử site: để kiểm tra số lượng bài viết của đối thủ</a></li><li><a href="#s5">Các công cụ cào dữ liệu và Giới hạn của việc cào SERP</a></li><li><a href="#s6">Khai thác Sitemap XML của đối thủ: Cách nhanh nhất lấy 100% cấu trúc trang web</a></li><li><a href="#s7">Tự động hóa với Google Sheets IMPORTXML và Ưu thế vượt trội so với Ahrefs/Semrush</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01 T02"><h2>1. Bản chất của nghiên cứu đối thủ: Tìm ra khoảng trống chủ đề và từ khóa quan trọng</h2><p>Trong bài học này, chúng ta sẽ cùng nhau tìm hiểu phương pháp thực hiện nghiên cứu đối thủ cạnh tranh (Competitor Research and Analysis) nhằm tìm ra các chủ đề và từ khóa quan trọng cần phải đề cập trên website của bạn. Bản chất của việc nghiên cứu đối thủ không phải là đi sao chép mù quáng, mà là <b>tìm hiểu xem ai là đối thủ thực sự của bạn và họ đang bao phủ những nội dung gì</b>, từ đó đảm bảo trang web của bạn không bị thiếu sót bất kỳ mảnh ghép thông tin quan trọng nào so với thị trường.</p>
+<p>Quy trình bắt đầu bằng việc tìm kiếm trực tiếp trên Google để xác định các đối thủ hàng đầu, sử dụng chính các chủ đề chính (Main Topics) và chủ đề phụ (Subtopics) đã xác định từ bài học trước làm truy vấn tìm kiếm. Ở giai đoạn này, chúng ta tập trung vào các chủ đề chính để xem ai đang đứng đầu ngành và xem mức độ họ bao phủ những chủ đề đó sâu rộng đến đâu.</p>
+<p>Ví dụ thực tế với chủ đề <code>Dog Breeds</code> (Các giống chó): Khi gõ cụm từ này lên Google, kết quả lập tức chỉ ra hai đối thủ khổng lồ đầu ngành:</p>
+<ul>
+  <li><b>AKC (American Kennel Club - Câu lạc bộ Chó giống Mỹ)</b>: Đây là tổ chức phi lợi nhuận lâu đời và lớn nhất thế giới về đăng ký các giống chó thuần chủng. Họ đóng vai trò như cơ quan thẩm quyền tối cao, ủng hộ việc nuôi chó như thành viên gia đình và hướng dẫn chăm sóc chó chuẩn mực. Nhìn vào menu điều hướng của AKC, bạn có thể thấy họ bao phủ rất nhiều danh mục thông tin phong phú vì tất cả đều liên quan trực tiếp đến sứ mệnh tổ chức của họ.</li>
+  <li><b>Basepaws (basepaws.com)</b>: Đây là công ty cung cấp dịch vụ xét nghiệm DNA và di truyền học cho thú cưng. Menu điều hướng chính của họ tập trung vào các chủ đề cốt lõi liên quan đến xét nghiệm DNA, và họ chỉ bắt đầu đi sâu vào cẩm nang các giống chó khi người dùng truy cập vào phần kiến thức học tập (Learn section) trên website của họ.</li>
+</ul><figure><img src="photos/m05-l03-01.jpg" alt="Nghiên cứu đối thủ cạnh tranh giúp tìm ra các chủ đề và từ khóa cốt lõi để không bị thiếu sót nội dung." loading="lazy"><figcaption>Nghiên cứu đối thủ cạnh tranh giúp tìm ra các chủ đề và từ khóa cốt lõi để không bị thiếu sót nội dung.</figcaption></figure></section><section class="seg" id="s2" data-src="T02 T03"><h2>2. Sự biến đổi của trang kết quả tìm kiếm (SERP) giữa năm 2023 và 2024</h2><p>Yoyao phân tích một hiện tượng cực kỳ thú vị và quan trọng trên trang kết quả tìm kiếm (SERP) cho từ khóa <code>dog breeds</code>: Nếu nhìn lướt qua, bạn sẽ thấy chỉ có đúng <b>5 liên kết màu xanh truyền thống (organic blue links)</b>. Tuy nhiên, nếu đếm thêm các liên kết trang con mở rộng (sitelinks) nằm dưới kết quả số 1 của AKC, tổng cộng có tới 10 liên kết màu xanh xuất hiện trên trang nhất.</p>
+<p>Để giúp người học có tư duy phân tích nhạy bén, Yoyao đặt hai ảnh chụp màn hình SERP cạnh nhau để so sánh sự thay đổi ngoạn mục giữa năm 2023 (bên trái) và năm 2024 (bên phải):</p>
+<ul>
+  <li><b>Nửa trên trang nhất</b>: AKC.org luôn vững vàng ở vị trí số 1. Nhưng sang năm 2024, AKC đã được Google cấp thêm một khối sitelinks khổng lồ chiếm trọn không gian nổi bật nhất màn hình. Ở vị trí số 2, Basepaws xuất hiện ngay phía trên hộp câu hỏi <i>People Also Ask (Mọi người cũng hỏi)</i>.</li>
+  <li><b>Nửa dưới trang nhất</b>: Năm 2023, Google hiển thị một dải nhiều hình ảnh các giống chó cùng phần Tin tức hàng đầu (Top Stories). Nhưng sang năm 2024, Google đã thay thế bằng một khối Video trực quan và đồ họa thông tin phong phú.</li>
+  <li><b>Sự dịch chuyển của Wikipedia</b>: Do sự bùng nổ của các tính năng SERP mới, trang Wikipedia về danh sách các giống chó đã bị đẩy xuống tận đáy trang nhất, mặc dù về mặt thứ hạng thực tế họ chỉ giảm đúng 1 bậc (từ vị trí số 4 năm 2023 xuống vị trí số 5 năm 2024).</li>
+</ul>
+<p>Sự thay đổi này là một điểm cần suy nghĩ và điều chỉnh khi nghiên cứu đối thủ: Bạn không chỉ nhìn vào thứ hạng mà phải quan sát toàn diện các tính năng SERP để biết người dùng đang được phục vụ những định dạng nội dung nào (chữ viết, video, công cụ lọc hay hình ảnh).</p><figure><img src="photos/m05-l03-03.jpg" alt="So sánh sự khác biệt của SERP năm 2023 và 2024: Các tính năng phong phú thu hẹp liên kết tự nhiên." loading="lazy"><figcaption>So sánh sự khác biệt của SERP năm 2023 và 2024: Các tính năng phong phú thu hẹp liên kết tự nhiên.</figcaption></figure></section><section class="seg" id="s3" data-src="T03 T04"><h2>3. Phân tích tính năng trải nghiệm: Bộ lọc đa năng (Faceted Navigation) của đối thủ</h2><p>Quay trở lại hai kết quả hàng đầu của AKC và Basepaws: Cả hai trang này đều là các <b>Trang trung tâm (Hub Pages)</b> đóng vai trò như một thư mục liên kết nội bộ tỏa ra hàng trăm trang bài viết riêng lẻ cho từng giống chó cụ thể.</p>
+<p>Yoyao chỉ ra một chi tiết trải nghiệm người dùng đắt giá cần học hỏi: <b>Các tính năng bộ lọc (Filter navigation)</b> ở thanh bên trái:</p>
+<ul>
+  <li>Cả AKC và Basepaws đều thiết lập một bộ lọc rất chi tiết ở thanh bên: cho phép người dùng lọc chó theo kích thước (nhỏ, trung bình, lớn), mức độ rụng lông, mức độ thân thiện với trẻ em, mức độ năng động hoặc nhóm phân loại nghiệp vụ.</li>
+  <li>Nếu bạn đang có kế hoạch xây dựng một website lớn về thú cưng, việc tích hợp một bộ lọc tương tự sẽ nâng tầm trải nghiệm người dùng vượt bậc, giúp họ tìm kiếm đúng giống chó phù hợp chỉ sau vài cú nhấp chuột.</li>
+  <li>Trong khi đó, kết quả ở vị trí số 3 và số 4 tuy không có bộ lọc bên cạnh nhưng họ lại trang bị một thanh tìm kiếm chuyên dụng đặt ngay đầu trang để người dùng gõ tên giống chó nhanh chóng.</li>
+</ul><figure><img src="photos/m05-l03-05.jpg" alt="Các trang trung tâm của AKC và Basepaws sử dụng bộ lọc bên trái hoặc thanh tìm kiếm chuyên biệt phía trên." loading="lazy"><figcaption>Các trang trung tâm của AKC và Basepaws sử dụng bộ lọc bên trái hoặc thanh tìm kiếm chuyên biệt phía trên.</figcaption></figure></section><section class="seg" id="s4" data-src="T04"><h2>4. Sử dụng toán tử site: để kiểm tra số lượng bài viết của đối thủ</h2><p>Bây giờ, nếu bạn muốn biết mỗi đối thủ đang bao phủ chính xác bao nhiêu giống chó thì phải làm thế nào? Chẳng lẽ bạn phải ngồi lật từng trang phân trang (pagination) và đếm thủ công từng bài viết một? Cách làm đó quá tốn thời gian và thiếu chuyên nghiệp.</p>
+<p>Giải pháp tối ưu là sử dụng <b>Toán tử tìm kiếm <code>site:</code></b> của Google:</p>
+<ol>
+  <li>Gõ lệnh: <code>site:akc.org/dog-breeds</code> lên thanh tìm kiếm Google. Nhớ nhấp vào mục <i>Công cụ (Tools)</i> để xem con số thống kê chính xác: Google hiển thị khoảng <b>806 kết quả</b> bài viết trong thư mục con này!</li>
+  <li>Thực hiện tương tự với đối thủ thứ hai: <code>site:basepaws.com/dog-breeds</code>: Kết quả trả về khoảng <b>539 trang</b>.</li>
+</ol>
+<p>Mặc dù 539 trang là con số ít hơn so với 806 trang của AKC, nhưng việc phải bấm vào 539 liên kết này để sao chép thủ công tên từng giống chó vào bảng tính vẫn là một cực hình. Vì vậy, chúng ta cần một phương pháp tự động hóa thông minh hơn rất nhiều.</p><figure><img src="photos/m05-l03-07.jpg" alt="Dùng toán tử site:akc.org/dog-breeds để phát hiện AKC có 806 trang, trong khi Basepaws có 539 trang." loading="lazy"><figcaption>Dùng toán tử site:akc.org/dog-breeds để phát hiện AKC có 806 trang, trong khi Basepaws có 539 trang.</figcaption></figure></section><section class="seg" id="s5" data-src="T04 T05"><h2>5. Các công cụ cào dữ liệu và Giới hạn của việc cào SERP</h2><p>Yoyao thảo luận về các công cụ cào dữ liệu (Web Scrapers) hiện nay trên thị trường. Bạn có thể sử dụng các phần mềm chuyên dụng như <i>Octoparse, Hexomatic</i> hoặc tận dụng các mô hình AI hiện đại như ChatGPT để đọc và trích xuất danh sách văn bản từ trang web.</p>
+<p>Tuy nhiên, các phương pháp này đều có những nhược điểm và rào cản nhất định:</p>
+<ul>
+  <li>Bạn phải mất thời gian cấu hình bộ chọn (selectors), thiết lập luồng cào dữ liệu và cung cấp danh sách URL đầu vào cho phần mềm.</li>
+  <li>Nhiều người thậm chí phải thuê lập trình viên xây dựng công cụ riêng hoặc thuê trợ lý ảo sao chép dán thủ công.</li>
+  <li>Quan trọng nhất: Nếu bạn dùng công cụ cào dữ liệu từ kết quả tìm kiếm của lệnh <code>site:</code> trên Google, bạn <b>chỉ lấy được những trang đã được Google lập chỉ mục (indexed pages)</b>. Điều gì sẽ xảy ra nếu đối thủ có những bài viết mới xuất bản cực kỳ hay nhưng chưa kịp lập chỉ mục? Bạn sẽ hoàn toàn bỏ sót chúng!</li>
+</ul><figure><img src="photos/m05-l03-10.jpg" alt="Các công cụ Scraper (Octoparse, Hexomatic) hoặc ChatGPT có thể cào văn bản nhưng đòi hỏi thiết lập phức tạp." loading="lazy"><figcaption>Các công cụ Scraper (Octoparse, Hexomatic) hoặc ChatGPT có thể cào văn bản nhưng đòi hỏi thiết lập phức tạp.</figcaption></figure></section><section class="seg" id="s6" data-src="T05"><h2>6. Khai thác Sitemap XML của đối thủ: Cách nhanh nhất lấy 100% cấu trúc trang web</h2><p>Và đây chính là bí quyết mà Yoyao chia sẻ: <b>Khai thác trực tiếp Sơ đồ trang web (Sitemap XML) của đối thủ</b>. Đây là con đường nhanh nhất, dễ dàng nhất và chuẩn xác 100% để thu thập toàn bộ các trang đang tồn tại trên một website.</p>
+<p>Mọi website đều muốn các công cụ tìm kiếm biết được toàn bộ các trang trên tên miền của họ để lập chỉ mục đầy đủ, do đó họ bắt buộc phải khai báo đường dẫn Sitemap trong tệp <code>robots.txt</code>:</p>
+<ul>
+  <li>Truy cập: <code>domain.com/robots.txt</code> để tìm dòng <code>Sitemap: https://...</code></li>
+  <li>Nếu website không khai báo trong robots.txt, bạn có thể thử 3 đuôi phổ biến: <code>/sitemap.xml</code>, <code>/sitemap_index.xml</code>, hoặc <code>/wp-sitemap.xml</code> (đối với các website xây dựng trên mã nguồn mở WordPress).</li>
+  <li>Đối với các trang web lớn như AKC, sitemap chính sẽ phân chia thành nhiều sitemap con cho từng chuyên mục. Bạn chỉ cần tìm đúng sitemap chứa các giống chó: <code>https://www.akc.org/breed-sitemap.xml</code>.</li>
+</ul><figure><img src="photos/m05-l03-12.jpg" alt="Khai thác sitemap.xml trong tệp robots.txt để lấy toàn bộ danh sách URL thực tế của website đối thủ." loading="lazy"><figcaption>Khai thác sitemap.xml trong tệp robots.txt để lấy toàn bộ danh sách URL thực tế của website đối thủ.</figcaption></figure></section><section class="seg" id="s7" data-src="T05 T06"><h2>7. Tự động hóa với Google Sheets IMPORTXML và Ưu thế vượt trội so với Ahrefs/Semrush</h2><p>Để tự động hóa hoàn toàn quy trình này, Yoyao cung cấp mẫu bảng tính <b>Sitemap Extraction Google Sheet</b> được lập trình sẵn công thức:</p>
+<ol>
+  <li>Bạn chỉ cần dán đường dẫn Sitemap XML của đối thủ vào ô <b>A2</b>.</li>
+  <li>Tại ô <b>B2</b>, công thức <code>IMPORTXML</code> đã được viết sẵn cú pháp XPath để tự động bóc tách tất cả các liên kết nằm trong thẻ <code>&lt;loc&gt;</code>. (Yoyao lưu ý: ban đầu ông bỏ dấu bằng <code>=</code> ra để tránh việc Google Sheets tự động gửi lệnh gọi liên tục làm vượt quá giới hạn API hàng ngày; khi bạn sẵn sàng sử dụng chỉ cần gõ thêm dấu bằng vào đầu công thức).</li>
+  <li>Ngay khi kích hoạt, toàn bộ danh sách hàng ngàn URL của đối thủ sẽ tự động đổ về bảng tính và được tách thành các cột thư mục con ngăn nắp.</li>
+  <li>Để làm sạch các dấu gạch ngang (ví dụ <code>golden-retriever</code>), bạn chỉ cần dùng hàm <code>SUBSTITUTE</code> trong bảng tính hoặc dán sang công cụ xử lý văn bản như TextTools.org để đổi dấu gạch ngang thành khoảng trắng.</li>
+</ol>
+<p>Yoyao kết luận: Phương pháp trích xuất Sitemap này <b>vượt trội hoàn toàn so với việc dùng Ahrefs hay Semrush</b> bởi 3 lý do chiến lược:</p>
+<ul>
+  <li><b>Tập trung tuyệt đối vào từ khóa mục tiêu thực tế</b>: Mọi người đều đưa từ khóa chính mà họ nhắm mục tiêu vào chính đường dẫn URL bài viết. Bạn nhìn thấy ngay chiến lược của họ mà không bị hoa mắt bởi hàng vạn từ khóa thứ hạng phụ trợ.</li>
+  <li><b>Lấy trọn vẹn 100% trang web đã tạo ra</b>: Bạn nhìn thấy toàn bộ quy mô nội dung của đối thủ, bất kể trang đó đã có thứ hạng hay chưa, giúp đánh giá chính xác mức độ bao phủ bản đồ chủ đề của họ là tốt hay xấu.</li>
+  <li><b>Vượt qua lệnh cấm bot trong robots.txt</b>: Rất nhiều website lớn trong các ngách cạnh tranh cao chủ động chặn bot của Ahrefs/Semrush quét web để giấu chiến lược, nhưng họ bắt buộc phải để mở Sitemap XML cho Google. Do đó, trích xuất Sitemap thủ công chính là vũ khí tối thượng giúp bạn nắm trọn bí mật kiến trúc của đối thủ cạnh tranh!</li>
+</ul><figure><img src="photos/m05-l03-16.jpg" alt="Sử dụng mẫu bảng tính IMPORTXML để tự động bóc tách URL thành các từ khóa và chủ đề phân cấp hoàn chỉnh." loading="lazy"><figcaption>Sử dụng mẫu bảng tính IMPORTXML để tự động bóc tách URL thành các từ khóa và chủ đề phân cấp hoàn chỉnh.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 03-Competitor Research and Analysis (Video bài học chính).</li>
+    <li>Đối chiếu ngữ nghĩa với bản tiếng Anh: <i>Bản Tiếng Anh/05-Topical and Keyword Research/03-Competitor Research and Analysis.mp4</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

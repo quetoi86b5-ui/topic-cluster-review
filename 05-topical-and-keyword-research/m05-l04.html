@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sitemap Zip File Extractions</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Sitemap Zip File Extractions</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 05: Topical and Keyword Research</p>
+  <nav class="toc"><ol><li><a href="#s1">Thách thức khi gặp tệp Sitemap nén dạng GZ và XML khổng lồ hàng chục ngàn dòng</a></li><li><a href="#s2">Giải nén tệp GZ và cách lọc dữ liệu thủ công trong Google Sheets</a></li><li><a href="#s3">Ứng dụng ChatGPT Advanced Data Analysis để trích xuất tự động sang tệp CSV</a></li><li><a href="#s4">Quản lý tệp dữ liệu lớn: Xử lý 38.000 URL và giải quyết lỗi tràn mảng dữ liệu</a></li><li><a href="#s5">Làm sạch dấu gạch ngang và Chuyển giao hàng ngàn từ khóa vào Topical Map</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Thách thức khi gặp tệp Sitemap nén dạng GZ và XML khổng lồ hàng chục ngàn dòng</h2><p>Nhiều lần khi bạn truy cập vào các trang web lớn với hàng ngàn trang nội dung, hoặc trong trường hợp các sàn thương mại điện tử khổng lồ là hàng chục ngàn hay hàng trăm ngàn trang, bạn sẽ thấy rằng họ có rất nhiều tệp sitemap được nén lại dưới định dạng tệp <b>.gz (Gzip)</b>. Đó là các sơ đồ trang web được nén lại để giảm bớt dung lượng truyền tải trên máy chủ.</p>
+<p>Điều bạn cần làm đầu tiên là tìm những tệp tham chiếu đến bài viết hoặc nội dung chính mà bạn muốn phân tích. Nếu bạn cố tình sao chép đường dẫn tệp nén này và dán trực tiếp vào công cụ trích xuất sơ đồ trang web của chúng tôi trên Google Sheets, bạn sẽ nhận thấy nội dung XML được nhập vào không thể phân tích cú pháp được, bởi vì đó là một tệp nén riêng biệt chứ không phải tệp văn bản mở.</p>
+<p>Do đó, quy trình bắt buộc là bạn phải dán liên kết vào trình duyệt để tải tệp <code>.xml.gz</code> về máy tính của mình, sau đó mở ra và tiến hành giải nén nó.</p><figure><img src="photos/m05-l04-04.jpg" alt="Các website thương mại điện tử lớn thường nén sitemap dưới định dạng .xml.gz khiến hàm IMPORTXML bị lỗi." loading="lazy"><figcaption>Các website thương mại điện tử lớn thường nén sitemap dưới định dạng .xml.gz khiến hàm IMPORTXML bị lỗi.</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. Giải nén tệp GZ và cách lọc dữ liệu thủ công trong Google Sheets</h2><p>Sau khi giải nén, bạn sẽ thu được một tệp <code>.xml</code> tiêu chuẩn. Tùy thuộc vào phần mềm trên máy tính, bạn có thể mở nó bằng các trình soạn thảo mã nguồn hoặc trình xử lý văn bản như Notepad. Khi mở ra, bạn sẽ thấy tất cả các tham số kỹ thuật đều hiển thị đầy đủ: các đường dẫn URL, vị trí thẻ <code>&lt;loc&gt;</code> và ngày sửa đổi cuối cùng <code>&lt;lastmod&gt;</code>.</p>
+<p>Cách làm thủ công truyền thống là sao chép toàn bộ nội dung dán vào Google Sheets. Tuy nhiên, Yoyao khuyên không nên sao chép mù quáng tất cả mọi thứ vì dung lượng tệp có thể kéo dài xuống tới 13.000 hàng, thậm chí lên tới 140.000 hàng dữ liệu, gây đóng băng và treo hoàn toàn bảng tính của bạn!</p>
+<p>Nếu làm trong bảng tính, bạn phải xóa bớt các hàng không cần thiết, sau đó sử dụng bộ lọc để lọc ra các dòng chứa tiền tố <code>http</code>. Tiếp theo, dùng tính năng Tìm kiếm và Thay thế (Find and Replace) để tìm thẻ mở <code>&lt;loc&gt;</code> và thay thế bằng rỗng, rồi tiếp tục tìm thẻ đóng <code>&lt;/loc&gt;</code> và thay thế bằng rỗng để chuyển đổi chúng thành các URL hoàn chỉnh.</p><figure><img src="photos/m05-l04-06.jpg" alt="Sử dụng các công cụ giải nén để mở tệp XML và cách xử lý dữ liệu thủ công bằng bộ lọc." loading="lazy"><figcaption>Sử dụng các công cụ giải nén để mở tệp XML và cách xử lý dữ liệu thủ công bằng bộ lọc.</figcaption></figure></section><section class="seg" id="s3" data-src="T02"><h2>3. Ứng dụng ChatGPT Advanced Data Analysis để trích xuất tự động sang tệp CSV</h2><p>Để giải phóng sức lao động và xử lý các tệp XML khổng lồ chứa tới 140.000 hàng dữ liệu một cách nhẹ nhàng, Yoyao chia sẻ một phương pháp hiện đại và cực kỳ hiệu quả: <b>Sử dụng tính năng Phân tích dữ liệu nâng cao (Advanced Data Analysis) của ChatGPT</b>.</p>
+<p>Quy trình thực hiện gồm các bước cụ thể:</p>
+<ol>
+  <li>Tải trực tiếp tệp <code>.xml</code> từ máy tính của bạn lên giao diện ChatGPT.</li>
+  <li>Đưa câu lệnh yêu cầu rõ ràng: <i>"Tôi cần giúp đỡ để trích xuất tất cả các URL trong tệp XML này. Bạn có thể tạo một tệp CSV để tôi tải xuống với tất cả các URL không?"</i></li>
+  <li>ChatGPT sẽ viết mã Python tự động chạy trên môi trường sandbox để bóc tách dữ liệu. Đôi khi tệp quá lớn mô hình có thể báo gặp khó khăn, nhưng nó sẽ tự động thử lại nhiều lần và xuất ra 10 URL đầu tiên để bạn kiểm tra đối chiếu.</li>
+  <li>Sau khi xác nhận dữ liệu chính xác, ChatGPT sẽ tạo sẵn một liên kết để bạn tải tệp <code>.csv</code> hoàn chỉnh về máy tính của mình chỉ sau ít phút.</li>
+</ol><figure><img src="photos/m05-l04-10.jpg" alt="Sử dụng tính năng Phân tích dữ liệu nâng cao của ChatGPT để xử lý tệp XML 140.000 dòng sang CSV." loading="lazy"><figcaption>Sử dụng tính năng Phân tích dữ liệu nâng cao của ChatGPT để xử lý tệp XML 140.000 dòng sang CSV.</figcaption></figure></section><section class="seg" id="s4" data-src="T02 T03"><h2>4. Quản lý tệp dữ liệu lớn: Xử lý 38.000 URL và giải quyết lỗi tràn mảng dữ liệu</h2><p>Khi mở tệp CSV vừa tải xuống, bạn có thể thấy khối lượng dữ liệu khổng lồ lên tới gần <b>38.000 URL</b>! Yoyao lưu ý không nên sao chép toàn bộ 38.000 URL này cùng một lúc vào Google Sheets vì nó sẽ làm sập bảng tính một lần nữa. Thay vào đó, bạn nên lọc bớt các trang không liên quan hoặc chỉ chọn ra các thư mục con phục vụ trực tiếp cho chủ đề của bạn.</p>
+<p>Một lỗi kỹ thuật thường gặp khi nhập dữ liệu phân cấp sâu vào bảng tính mẫu là thông báo lỗi: <i>"Kết quả mảng không được mở rộng vì nó sẽ ghi đè dữ liệu trống"</i> (Array result was not expanded because it would overwrite data). Yoyao giải thích nguyên nhân: Đó là vì cấu trúc URL của đối thủ đi sâu tới <b>5 cấp độ thư mục</b>, trong khi bảng tính mẫu ban đầu chỉ thiết kế sẵn 4 cột.</p>
+<p>Cách khắc phục cực kỳ đơn giản: Bạn chỉ cần chèn thêm một cột mới vào bảng tính, sao chép công thức phân tách URL sang cột mới đó và toàn bộ lỗi mảng sẽ được giải quyết triệt để ngay lập tức!</p><figure><img src="photos/m05-l04-14.jpg" alt="Xử lý tệp CSV chứa gần 38.000 URL và cách khắc phục lỗi tràn mảng bằng cách tạo thêm cột phân cấp." loading="lazy"><figcaption>Xử lý tệp CSV chứa gần 38.000 URL và cách khắc phục lỗi tràn mảng bằng cách tạo thêm cột phân cấp.</figcaption></figure></section><section class="seg" id="s5" data-src="T03"><h2>5. Làm sạch dấu gạch ngang và Chuyển giao hàng ngàn từ khóa vào Topical Map</h2><p>Từ việc phân tách các đường dẫn URL thành các cột thư mục con, bạn thu được danh sách các sản phẩm và chủ đề, nhưng chúng vẫn còn dính các dấu gạch ngang nối từ (ví dụ: <code>dry-dog-food</code>). Để loại bỏ các dấu gạch ngang này, bạn có thể thực hiện theo hai cách:</p>
+<ul>
+  <li>Sao chép danh sách và dán vào các công cụ xử lý văn bản trực tuyến miễn phí như <i>TextTools.org</i> để thay thế dấu gạch ngang bằng khoảng trắng.</li>
+  <li>Hoặc sử dụng ngay hàm <code>SUBSTITUTE</code> trong Google Sheets để tự động chuyển dấu gạch ngang thành khoảng trắng một cách đồng loạt.</li>
+</ul>
+<p>Sau khi làm sạch, bạn sao chép toàn bộ danh sách và thêm vào dàn ý nghiên cứu chủ đề của mình. Quy trình này đòi hỏi một vài bước bổ sung so với bình thường, nhưng hoàn toàn xứng đáng vì nó mang lại cho bạn hàng ngàn từ khóa và ý tưởng chủ đề cực kỳ chất lượng từ các đối thủ lớn nhất trong ngành.</p><figure><img src="photos/m05-l04-16.jpg" alt="Làm sạch dấu gạch ngang bằng hàm hoặc công cụ văn bản để đưa danh mục vào dàn ý Topical Map." loading="lazy"><figcaption>Làm sạch dấu gạch ngang bằng hàm hoặc công cụ văn bản để đưa danh mục vào dàn ý Topical Map.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 04-Sitemap Zip File Extractions (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
