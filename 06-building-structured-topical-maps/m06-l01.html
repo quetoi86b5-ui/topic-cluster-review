@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Intro to Topical Hierarchy and Site Architecture</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Intro to Topical Hierarchy and Site Architecture</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 06: Building Structured Topical Maps</p>
+  <nav class="toc"><ol><li><a href="#s1">Bản chất của Phân cấp chủ đề (Topical Hierarchy) và Ẩn dụ khóa học đại học</a></li><li><a href="#s2">So sánh Cấu trúc phẳng (Flat) vs Cấu trúc phân cấp (Hierarchical)</a></li><li><a href="#s3">Mô hình kiến trúc dạng cây: Phân cấp 4 tầng trong ngách Thú cưng</a></li><li><a href="#s4">Nguyên tắc Độ sâu nhấp chuột (Click Depth): Tối đa 3 đến 4 cú nhấp từ Trang chủ</a></li><li><a href="#s5">Hai phong cách định dạng URL Structure: Thư mục lồng nhau vs Thư mục phẳng</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Bản chất của Phân cấp chủ đề (Topical Hierarchy) và Ẩn dụ khóa học đại học</h2><p>Trong bài học mở đầu của Học phần 06, Yoyao giới thiệu khái niệm cốt lõi: <b>Topical Hierarchy (Phân cấp chủ đề)</b>. Đó là phương pháp tổ chức các chủ đề của trang web theo cách tối ưu nhất giúp cho cả công cụ tìm kiếm và người dùng dễ dàng hiểu được tầm quan trọng tương đối và mối quan hệ phụ thuộc giữa các nội dung.</p>
+<p>Một kiến trúc website phân cấp rõ ràng sẽ giúp công cụ tìm kiếm nhanh chóng nhận diện được đâu là nội dung trụ cột trung tâm và đâu là các bài viết bổ trợ chi tiết.</p>
+<p>Để người học dễ hình dung, Yoyao đưa ra một ẩn dụ cực kỳ thú vị: <i>"Hãy nghĩ về phân cấp chủ đề giống như lộ trình tham gia các khóa học ở trường đại học!"</i></p>
+<ul>
+  <li>Bạn luôn bắt đầu từ những môn học nhập môn bao quát nhất (các lớp 101 cơ bản).</li>
+  <li>Sau đó, bạn dần dần bước lên các lớp học chuyên sâu, đào sâu vào từng khía cạnh kỹ thuật phức tạp (các lớp 201, 301 và 401 nâng cao).</li>
+</ul>
+<p>Một cấu trúc phân cấp chuẩn mực giúp cải thiện vượt bậc thứ hạng của trang web trên trang kết quả tìm kiếm, đồng thời nâng tầm trải nghiệm người dùng, gia tăng thời gian trên trang (Time on Site) và thúc đẩy tỷ lệ khách quay trở lại thường xuyên.</p>
+<p>Bằng cách tổ chức nội dung đi từ nền tảng đến chi tiết, bạn giúp độc giả không bao giờ cảm thấy bị ngợp trước khối lượng thông tin khổng lồ, mà từng bước được dẫn dắt để hiểu sâu sắc toàn bộ chủ đề một cách tự nhiên nhất.</p><figure><img src="photos/m06-l01-04.jpg" alt="Topical Hierarchy: Tổ chức chủ đề trang web tương tự như lộ trình học đại học từ môn cơ bản 101 đến chuyên sâu 401." loading="lazy"><figcaption>Topical Hierarchy: Tổ chức chủ đề trang web tương tự như lộ trình học đại học từ môn cơ bản 101 đến chuyên sâu 401.</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. So sánh Cấu trúc phẳng (Flat) vs Cấu trúc phân cấp (Hierarchical)</h2><p>Yoyao đặt lên bàn cân so sánh hai trường phái thiết kế cấu trúc URL phổ biến:</p>
+<ol>
+  <li><b>Cấu trúc phẳng (Flat Structure)</b>: Toàn bộ bài viết được đặt ngay sau tên miền chính mà không có bất kỳ thư mục con nào:
+    <br>Ví dụ: <code>domain.com/dog-breed-german-shepherd</code> hoặc <code>domain.com/dog-breed-german-shepherd-training</code>.
+  </li>
+  <li><b>Cấu trúc phân cấp (Hierarchical Structure)</b>: Các bài viết được tổ chức lồng vào nhau theo từng cấp thư mục logic:
+    <br>Ví dụ: <code>domain.com/dog-breed/german-shepherd</code> và <code>domain.com/dog-breed/german-shepherd/training</code>.
+  </li>
+</ol>
+<p>Mặc dù cấu trúc phẳng có ưu điểm là đường dẫn URL ngắn gọn, nhưng nó bộc lộ những nhược điểm vô cùng tai hại: Tạo cảm giác vô tổ chức, cực kỳ khó điều hướng đối với người dùng, khó khăn trong việc theo dõi tiến độ từng Silo và gây trở ngại lớn cho việc quản trị chiến lược liên kết nội bộ.</p><figure><img src="photos/m06-l01-06.jpg" alt="So sánh đường dẫn URL giữa Cấu trúc phẳng không tổ chức và Cấu trúc phân cấp có thư mục lồng nhau." loading="lazy"><figcaption>So sánh đường dẫn URL giữa Cấu trúc phẳng không tổ chức và Cấu trúc phân cấp có thư mục lồng nhau.</figcaption></figure></section><section class="seg" id="s3" data-src="T02 T03"><h2>3. Mô hình kiến trúc dạng cây: Phân cấp 4 tầng trong ngách Thú cưng</h2><p>Để trực quan hóa cấu trúc phân cấp, Yoyao phác thảo mô hình kiến trúc cây nội dung mẫu trong ngách Chó (Dogs):</p>
+<ul>
+  <li><b>Gốc (Domain)</b>: Trang chủ website <code>domain.com</code>.</li>
+  <li><b>Tầng Main Topics</b>: Phân chia thành 3 trụ cột chính: <code>Dog food</code>, <code>Dog breeds</code>, và <code>Dog training</code>.</li>
+  <li><b>Tầng Subtopics cấp 1</b>: Nằm dưới nhánh <i>Dog breeds</i>, phân chia ra các giống chó cụ thể: <code>German shepherd</code>, <code>Bulldog</code>, <code>Labrador retriever</code>.</li>
+  <li><b>Tầng Subtopics cấp 2</b>: Nằm dưới nhánh <i>Bulldog</i>, tiếp tục phân nhánh thành các phân loài nhỏ: <code>American bulldog</code>, <code>French bulldog</code>, <code>English bulldog</code>.</li>
+</ul>
+<p>Mô hình cây này giúp người quản trị website nhìn thấy rõ ràng toàn bộ các mối quan hệ phụ thuộc cha - con giữa các chủ đề một cách trực quan nhất.</p><figure><img src="photos/m06-l01-10.jpg" alt="Sơ đồ kiến trúc cây phân cấp: Domain -&gt; Main Topics (Dog Food, Dog Breeds, Dog Training) -&gt; Subtopics giống chó cụ thể." loading="lazy"><figcaption>Sơ đồ kiến trúc cây phân cấp: Domain -&gt; Main Topics (Dog Food, Dog Breeds, Dog Training) -&gt; Subtopics giống chó cụ thể.</figcaption></figure></section><section class="seg" id="s4" data-src="T03 T04"><h2>4. Nguyên tắc Độ sâu nhấp chuột (Click Depth): Tối đa 3 đến 4 cú nhấp từ Trang chủ</h2><p>Một chỉ số kỹ thuật then chốt mà Yoyao đặc biệt nhấn mạnh là <b>Click Depth (Độ sâu nhấp chuột)</b>:</p>
+<ol>
+  <li><b>Click 1</b>: Từ Trang chủ nhấp chuột vào Main Topic 1 (ví dụ: <code>Dog breeds</code>).</li>
+  <li><b>Click 2</b>: Từ Main Topic nhấp vào Subtopic 2 (ví dụ: <code>Bulldog</code>).</li>
+  <li><b>Click 3</b>: Từ Subtopic nhấp vào bài viết chi tiết Subtopic 3 (ví dụ: <code>French bulldog</code>).</li>
+</ol>
+<p>Quy tắc bất biến: <b>Độ sâu nhấp chuột không bao giờ được vượt quá 3 đến 4 cú nhấp từ trang chủ</b>. Nếu một trang nội dung bị chôn giấu quá sâu (Click depth >= 5), bot của Google sẽ rất hiếm khi thu thập dữ liệu định kỳ và giá trị sức mạnh liên kết (link equity) truyền từ trang chủ xuống sẽ bị suy giảm gần như bằng không.</p><figure><img src="photos/m06-l01-12.jpg" alt="Quy tắc Click Depth: Click 1 (Main Topic) -&gt; Click 2 (Subtopic) -&gt; Click 3 (Subtopic chi tiết)." loading="lazy"><figcaption>Quy tắc Click Depth: Click 1 (Main Topic) -&gt; Click 2 (Subtopic) -&gt; Click 3 (Subtopic chi tiết).</figcaption></figure></section><section class="seg" id="s5" data-src="T04"><h2>5. Hai phong cách định dạng URL Structure: Thư mục lồng nhau vs Thư mục phẳng</h2><p>Yoyao kết thúc bài học bằng việc so sánh hai phong cách triển khai đường dẫn URL thực tế trên website:</p>
+<ul>
+  <li><b>Phong cách 1 (Thư mục lồng nhau hoàn toàn - Hard Hierarchical URLs)</b>: <code>domain.com/dog-breed/bulldog/french/</code>. Phong cách này thể hiện cấu trúc phân cấp vật lý hoàn hảo, nhưng nhược điểm là URL có thể bị quá dài dòng.</li>
+  <li><b>Phong cách 2 (Thư mục bán phẳng - Semi-flat / Flat URLs)</b>: <code>domain.com/french-bulldog/</code> hoặc <code>domain.com/bulldog/french/</code>. Đường dẫn URL ngắn gọn, thân thiện với việc chia sẻ xã hội.</li>
+</ul>
+<p>Yoyao khẳng định: Dù bạn chọn phong cách URL nào thì <b>Topical Hierarchy vẫn có thể được thiết lập vững chắc 100% thông qua cấu trúc menu điều hướng, chuỗi đường dẫn Breadcrumbs và chiến lược liên kết nội bộ (Internal Links)</b>! Điều cốt lõi là sự nhất quán trong toàn bộ hệ thống trang web của bạn.</p>
+<p>Khi các liên kết nội bộ được thiết lập bám sát theo sơ đồ phân nhánh của Topical Map, các thuật toán thu thập dữ liệu của công cụ tìm kiếm sẽ dễ dàng hiểu được ngữ cảnh chuyên môn và độ sâu thẩm quyền của trang web mà không gặp bất kỳ trở ngại nào.</p><figure><img src="photos/m06-l01-16.jpg" alt="Hai phong cách URL: domain.com/dog-breed/bulldog/french/ lồng nhau hoặc domain.com/french-bulldog/ phẳng nhưng liên kết nội bộ phân cấp." loading="lazy"><figcaption>Hai phong cách URL: domain.com/dog-breed/bulldog/french/ lồng nhau hoặc domain.com/french-bulldog/ phẳng nhưng liên kết nội bộ phân cấp.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 01-Intro to Topical Hierarchy and Site Architecture (Video bài học chính).</li>
+    <li>Đối chiếu ngữ nghĩa với bản tiếng Anh: <i>Bản Tiếng Anh/06-Building Structured Topical Maps/01-Intro to Topical Hierarchy and Site Architecture.mp4</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Creating the Mind Map From the Spreadsheet</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Creating the Mind Map From the Spreadsheet</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 06: Building Structured Topical Maps</p>
+  <nav class="toc"><ol><li><a href="#s1">Chuyển giao dữ liệu từ Bảng tính sang Sơ đồ tư duy (Spreadsheet to Mind Map)</a></li><li><a href="#s2">Sao chép cấu trúc phân cấp và Dán tự động vào phần mềm Mind Map</a></li><li><a href="#s3">Lợi ích của Sơ đồ tư duy trong giao tiếp đội ngũ và Trực quan hóa Silo</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Chuyển giao dữ liệu từ Bảng tính sang Sơ đồ tư duy (Spreadsheet to Mind Map)</h2><p>Trong bài học thực hành ngắn gọn và tinh gọn này, Yoyao hướng dẫn quy trình chuyển hóa toàn bộ dữ liệu có cấu trúc từ bảng tính <b>Topical Map Spreadsheet</b> sang phần mềm <b>Sơ đồ tư duy (Mind Map)</b>.</p>
+<p>Thao tác đầu tiên là mở bảng tính và áp dụng bộ lọc tại cột công thức <code>ST4 = Keyword</code>: Chọn lọc những dòng có giá trị <b>TRUE</b>. Lúc này, toàn bộ bảng tính sẽ tự động cô đọng lại, ẩn đi hàng ngàn từ khóa phụ và chỉ hiển thị đúng danh sách các trang bài viết độc nhất (Subtopic 4) cùng các cấp phân nhánh cha con của chúng.</p><figure><img src="photos/m06-l03-02.jpg" alt="Lọc các hàng TRUE theo công thức ST4=KW trên bảng tính để chuẩn bị xuất cấu trúc sang Mind Map." loading="lazy"><figcaption>Lọc các hàng TRUE theo công thức ST4=KW trên bảng tính để chuẩn bị xuất cấu trúc sang Mind Map.</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. Sao chép cấu trúc phân cấp và Dán tự động vào phần mềm Mind Map</h2><p>Sau khi đã lọc được danh sách sạch, bạn chọn đồng thời các cột phân cấp: <i>Main Topic 1, Subtopic 2, Subtopic 3, Subtopic 4</i> và nhấn phím tắt sao chép (<code>Ctrl + C</code>).</p>
+<p>Tiếp theo, mở phần mềm sơ đồ tư duy (như <i>XMind, MindNode, Coggle hoặc MindMeister</i>), tạo một nút trung tâm (Root Node) đại diện cho tên miền website của bạn và nhấn phím tắt dán (<code>Ctrl + V</code>). Một điều kỳ diệu sẽ xảy ra: <b>Hầu hết các phần mềm Mind Map hiện đại đều có khả năng tự động hiểu cấu trúc tab phân cấp của bảng tính</b> và tự động vẽ ra một cây sơ đồ tư duy phân nhánh đa tầng tuyệt đẹp chỉ sau một giây!</p><figure><img src="photos/m06-l03-11.jpg" alt="Dán danh sách phân cấp nhiều cột vào Mind Map, phần mềm tự động vẽ ra cây sơ đồ phân nhánh." loading="lazy"><figcaption>Dán danh sách phân cấp nhiều cột vào Mind Map, phần mềm tự động vẽ ra cây sơ đồ phân nhánh.</figcaption></figure></section><section class="seg" id="s3" data-src="T02"><h2>3. Lợi ích của Sơ đồ tư duy trong giao tiếp đội ngũ và Trực quan hóa Silo</h2><p>Sơ đồ tư duy hoàn chỉnh này mang lại những giá trị vô cùng to lớn cho quy trình sản xuất nội dung:</p>
+<ul>
+  <li><b>Trực quan hóa tức thì các Silo</b>: Bạn nhìn thấy ngay cụm chủ đề nào đã được bao phủ dày đặc, cụm nào còn thưa thớt bài viết để kịp thời bổ sung.</li>
+  <li><b>Giao tiếp hoàn hảo với đội ngũ và khách hàng</b>: Thay vì bắt khách hàng hay người viết bài phải đọc một bảng tính Excel khô khan với hàng chục ngàn dòng, việc gửi cho họ một bức ảnh sơ đồ tư duy trực quan sẽ giúp họ nắm bắt toàn bộ kiến trúc website chỉ trong 30 giây.</li>
+  <li><b>Kim chỉ nam cho chiến lược liên kết nội bộ</b>: Sơ đồ tư duy chỉ rõ bài viết nào cần liên kết về nhánh cha nào, giúp việc xây dựng mạng lưới internal links không bao giờ bị sai sót.</li>
+</ul><figure><img src="photos/m06-l03-16.jpg" alt="Sơ đồ tư duy hoàn chỉnh giúp trực quan hóa toàn bộ các Silo nội dung và dễ dàng phân công cho người viết." loading="lazy"><figcaption>Sơ đồ tư duy hoàn chỉnh giúp trực quan hóa toàn bộ các Silo nội dung và dễ dàng phân công cho người viết.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 03-Creating the Mind Map From the Spreadsheet (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

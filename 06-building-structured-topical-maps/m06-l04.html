@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Creating the Site Architecture in WordPress</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Creating the Site Architecture in WordPress</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 06: Building Structured Topical Maps</p>
+  <nav class="toc"><ol><li><a href="#s1">Hai phương pháp triển khai cấu trúc URL vật lý trên WordPress</a></li><li><a href="#s2">Phương pháp 1: Pages với tính năng Phân cấp Trang cha - Trang con</a></li><li><a href="#s3">Phương pháp 2: Posts kết hợp Chuyên mục phân cấp và Lời khuyên xương máu</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Hai phương pháp triển khai cấu trúc URL vật lý trên WordPress</h2><p>Trong bài học này, Yoyao hướng dẫn cách hiện thực hóa kiến trúc Topical Map lên hệ quản trị nội dung mã nguồn mở phổ biến nhất hành tinh: <b>WordPress</b>. Để tạo ra các đường dẫn URL phân cấp cứng (Hard URLs dạng <code>domain.com/category/subcategory/post</code>), WordPress cung cấp 2 phương pháp chính thống:</p>
+<ol>
+  <li><b>Phương pháp 1: Sử dụng Pages với tính năng Trang cha và Trang con (Parent and Child Pages)</b>.</li>
+  <li><b>Phương pháp 2: Sử dụng Posts kết hợp Chuyên mục cha và Chuyên mục con (Parent and Child Categories)</b>.</li>
+</ol>
+<p>Mỗi phương pháp đều có những ưu điểm và sự đánh đổi về mặt kỹ thuật mà người quản trị website cần cân nhắc kỹ lưỡng.</p><figure><img src="photos/m06-l04-06.jpg" alt="Hai cách tạo đường dẫn URL cứng phân cấp trên WordPress: Pages (Trang cha - con) hoặc Posts (Chuyên mục cha - con)." loading="lazy"><figcaption>Hai cách tạo đường dẫn URL cứng phân cấp trên WordPress: Pages (Trang cha - con) hoặc Posts (Chuyên mục cha - con).</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. Phương pháp 1: Pages với tính năng Phân cấp Trang cha - Trang con</h2><p>Đối với định dạng <b>Pages (Trang tĩnh)</b> trên WordPress, hệ thống tích hợp sẵn tính năng <i>Thuộc tính trang (Page Attributes)</i> ở thanh bên phải:</p>
+<ul>
+  <li>Khi tạo một trang mới (ví dụ: <code>Tesla Model S Plaid</code>), tại ô <b>Trang cha (Parent Page)</b>, bạn chỉ cần chọn trang cấp trên của nó là <code>Tesla Model S</code>.</li>
+  <li>Ngay lập tức, WordPress sẽ tự động tạo ra một cấu trúc URL lồng nhau hoàn hảo: <code>https://cars.com/electric/tesla/model-s/plaid</code>.</li>
+  <li>Ưu điểm lớn nhất của phương pháp này là nó tổ chức website thành các Silo phân cấp cực kỳ chặt chẽ và giúp việc theo dõi liên kết nội bộ giữa trang cha và trang con trở nên cực kỳ dễ dàng.</li>
+  <li>Tuy nhiên, nhược điểm là bạn bắt buộc phải nhớ chọn trang cha mỗi khi xuất bản một bài viết mới, điều này có thể gây nhầm lẫn nếu đội ngũ cộng tác viên viết bài không được đào tạo kỹ.</li>
+</ul><figure><img src="photos/m06-l04-09.jpg" alt="Tính năng Page Attributes trên WordPress cho phép chọn Parent Page để tự động tạo cấu trúc URL lồng nhau." loading="lazy"><figcaption>Tính năng Page Attributes trên WordPress cho phép chọn Parent Page để tự động tạo cấu trúc URL lồng nhau.</figcaption></figure></section><section class="seg" id="s3" data-src="T02 T03"><h2>3. Phương pháp 2: Posts kết hợp Chuyên mục phân cấp và Lời khuyên xương máu</h2><p>Phương pháp thứ hai là sử dụng <b>Posts (Bài viết)</b> kết hợp thiết lập cấu trúc đường dẫn tĩnh Permalink chứa <code>/%category%/%postname%/</code> và tạo các Chuyên mục cha - con (Parent & Child Categories):</p>
+<p>Mặc dù phương pháp này cho phép người dùng lọc bài viết qua các trang lưu trữ chuyên mục (Category Archive Pages), nhưng Yoyao đưa ra một lời cảnh báo kỹ thuật xương máu:</p>
+<ul>
+  <li><b>Cám dỗ tích chọn nhiều chuyên mục</b>: Người viết thường có xu hướng tích chọn 2 hoặc nhiều chuyên mục cho cùng một bài viết, điều này làm vỡ cấu trúc Silo và gây ra tình trạng trùng lặp nội dung nghiêm trọng.</li>
+  <li><b>Khó kiểm soát khi quy mô website mở rộng</b>: Khi website phát triển lên tới hàng trăm hoặc hàng ngàn bài viết, việc theo dõi xem bài nào thuộc Silo nào qua hệ thống chuyên mục lồng nhau trở nên vô cùng phức tạp và rối rắm.</li>
+</ul>
+<p>Yoyao đúc kết: Dù bạn chọn Pages hay Posts, điều quan trọng nhất là bạn phải duy trì kỷ luật cấu trúc tuyệt đối, bám sát 100% bản thiết kế của Topical Map để đảm bảo dòng chảy thẩm quyền của website luôn được tập trung cao nhất.</p>
+<p>Một kiến trúc website nhất quán và rõ ràng sẽ giúp cả người dùng lẫn các công cụ tìm kiếm dễ dàng định hướng, từ đó giúp trang web nhanh chóng xác lập thẩm quyền chuyên môn vững chắc trong toàn ngành.</p><figure><img src="photos/m06-l04-15.jpg" alt="Cảnh báo khi dùng Chuyên mục phân cấp cho Posts: Dễ gây bối rối khi chọn nhiều chuyên mục và khó quản lý khi đạt hàng trăm trang." loading="lazy"><figcaption>Cảnh báo khi dùng Chuyên mục phân cấp cho Posts: Dễ gây bối rối khi chọn nhiều chuyên mục và khó quản lý khi đạt hàng trăm trang.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 04-Creating the Site Architecture in WordPress (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
