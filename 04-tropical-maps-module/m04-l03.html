@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Topical Maps Influence Site Architecture, Internal Links, and Anchor Text</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>How Topical Maps Influence Site Architecture, Internal Links, and Anchor Text</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 04: Tropical Maps Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Kiến trúc trang web là gì và cách Topical Map trực tiếp định hình nó</a></li><li><a href="#s2">Một kiến trúc website tốt: Điều hướng rõ ràng và Chuỗi đường dẫn Breadcrumbs</a></li><li><a href="#s3">So sánh Pages vs Posts trên WordPress: Tổ chức phân cấp cha - con</a></li><li><a href="#s4">Xây dựng kiến trúc phân cấp cho Posts dựa vào Internal Links và Anchor Text</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01"><h2>1. Kiến trúc trang web là gì và cách Topical Map trực tiếp định hình nó</h2><p>Trong bài học này, Yoyao làm rõ khái niệm <b>Site Architecture (Kiến trúc trang web)</b> và mối liên hệ mật thiết của nó với bản đồ chủ đề. Kiến trúc trang web đề cập đến toàn bộ cách thức tổ chức, thiết kế và sắp xếp tổng thể của một website, bao gồm:</p>
+<ul>
+  <li>Bố cục sắp xếp và cách tổ chức các trang nội dung.</li>
+  <li>Mối quan hệ phân cấp hữu cơ giữa các trang (trang cha, trang con, trang đồng cấp).</li>
+  <li>Cách thức người dùng thực tế điều hướng và cách thức bot của công cụ tìm kiếm thu thập dữ liệu (crawling).</li>
+</ul>
+<p>Topical map tác động trực tiếp và định hình kiến trúc trang web: nó quyết định cách các chủ đề chính, chủ đề phụ và nội dung được nhóm lại với nhau, đồng thời quy định cách các trang liên kết nội bộ với nhau một cách có chiến lược.</p><figure><img src="photos/m04-l03-03.jpg" alt="Site Architecture: Tổ chức bố cục trang, mối quan hệ giữa các trang và cách người dùng, bot điều hướng." loading="lazy"><figcaption>Site Architecture: Tổ chức bố cục trang, mối quan hệ giữa các trang và cách người dùng, bot điều hướng.</figcaption></figure></section><section class="seg" id="s2" data-src="T01 T02"><h2>2. Một kiến trúc website tốt: Điều hướng rõ ràng và Chuỗi đường dẫn Breadcrumbs</h2><p>Một <b>Kiến trúc trang web tốt (Good Site Architecture)</b> mang lại những giá trị vô cùng to lớn cho cả trải nghiệm người dùng lẫn hiệu quả SEO:</p>
+<ul>
+  <li><b>Cung cấp khả năng điều hướng cực kỳ rõ ràng (Provides clear navigation)</b>: Người dùng luôn biết chính xác họ đang ở đâu và có thể dễ dàng quay lại các cấp trước đó.</li>
+  <li><b>Hiển thị chuỗi đường dẫn phân cấp Breadcrumbs hoàn hảo</b>: Ví dụ kinh điển: <code>Home > Electric Cars > Tesla > Model S</code>. Chuỗi Breadcrumbs này vừa giúp người dùng định hướng, vừa giúp Google hiển thị cấu trúc trang đẹp mắt trên kết quả tìm kiếm.</li>
+  <li><b>Tạo ra tổ chức logic chặt chẽ (Provides logical organization)</b>: Giúp việc truy cập thông tin trở nên dễ dàng và nhanh chóng nhất cho khách truy cập.</li>
+  <li><b>Thể hiện chuyên môn sâu sắc trong ngành</b>: Xây dựng sự tin cậy vững chắc với người dùng và các thuật toán tìm kiếm.</li>
+</ul><figure><img src="photos/m04-l03-05.jpg" alt="Kiến trúc website tốt mang lại điều hướng rõ ràng, chuỗi Breadcrumbs mạch lạc và xây dựng uy tín." loading="lazy"><figcaption>Kiến trúc website tốt mang lại điều hướng rõ ràng, chuỗi Breadcrumbs mạch lạc và xây dựng uy tín.</figcaption></figure></section><section class="seg" id="s3" data-src="T02"><h2>3. So sánh Pages vs Posts trên WordPress: Tổ chức phân cấp cha - con</h2><p>Khi triển khai kiến trúc trang web lên hệ quản trị nội dung phổ biến như WordPress, Yoyao phân tích sự khác nhau giữa hai định dạng: <b>Pages (Trang tĩnh)</b> và <b>Posts (Bài viết blog)</b>.</p>
+<p>Đối với định dạng <b>Pages</b>, WordPress hỗ trợ tính năng phân cấp Trang cha - Trang con (Parent and Child Pages) một cách tự nhiên. Bạn có thể dễ dàng tạo ra cấu trúc đường dẫn thư mục URL lồng nhau hoàn hảo phản ánh đúng Topical Map:</p>
+<ul>
+  <li>Trang cha (Parent Page): <code>/electric/</code></li>
+  <li>Trang con cấp 1 (Child Page): <code>/electric/tesla/</code></li>
+  <li>Trang con cấp 2 (Child Page): <code>/electric/tesla/model-s/</code></li>
+  <li>Trang con cấp 3 (Child Page): <code>/electric/tesla/model-s/care-maintenance/</code></li>
+</ul>
+<p>Cấu trúc này tạo ra sự phân cấp URL vật lý tuyệt đẹp, giúp củng cố tín hiệu kiến trúc một cách mạnh mẽ nhất.</p><figure><img src="photos/m04-l03-07.jpg" alt="Sự khác biệt trong việc tạo cấu trúc URL phân cấp giữa Pages và Posts trên nền tảng WordPress." loading="lazy"><figcaption>Sự khác biệt trong việc tạo cấu trúc URL phân cấp giữa Pages và Posts trên nền tảng WordPress.</figcaption></figure></section><section class="seg" id="s4" data-src="T02"><h2>4. Xây dựng kiến trúc phân cấp cho Posts dựa vào Internal Links và Anchor Text</h2><p>Tuy nhiên, rất nhiều website lựa chọn xuất bản nội dung dưới dạng <b>Posts (Bài viết)</b> với cấu trúc đường dẫn phẳng (ví dụ: <code>https://cars.com/electric-tesla-model-s-care-maintenance/</code>) để giữ URL ngắn gọn. Vậy làm thế nào để thể hiện cấu trúc phân cấp chủ đề trong trường hợp này?</p>
+<p>Yoyao giải thích: Đối với định dạng Posts, <b>Topical Hierarchy hoàn toàn phụ thuộc vào chiến lược Liên kết nội bộ (Internal Linking) và Văn bản neo (Anchor Text)</b>!</p>
+<p>Bạn không cần có cấu trúc thư mục URL lồng nhau phức tạp thì mới có thể làm SEO ngữ nghĩa. Thay vào đó, bạn kết nối logic các bài viết lại với nhau bằng các liên kết nội bộ chiến lược bám sát theo sơ đồ Mind Map: Các bài viết con trỏ liên kết ngược về trang trụ cột (Pillar page) bằng các anchor text chính xác, và trang trụ cột liên kết tỏa ra các bài viết hỗ trợ. Chính mạng lưới liên kết nội bộ chặt chẽ này sẽ truyền tải toàn bộ tín hiệu phân cấp chủ đề tới Google một cách trọn vẹn và mạnh mẽ nhất.</p><figure><img src="photos/m04-l03-16.jpg" alt="Đối với định dạng Posts, thẩm quyền phân cấp chủ đề hoàn toàn dựa vào chiến lược liên kết nội bộ và Anchor text." loading="lazy"><figcaption>Đối với định dạng Posts, thẩm quyền phân cấp chủ đề hoàn toàn dựa vào chiến lược liên kết nội bộ và Anchor text.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 03-How Topical Maps Influence Site Architecture, Internal Links, and Anchor Text (Video bài học chính).</li>
+    <li>Đối chiếu ngữ nghĩa với bản tiếng Anh: <i>Bản Tiếng Anh/04-Tropical Maps Module/03-How Topical Maps Influence Site Architecture, Internal Links, and Anchor Text.mp4</i> (xác thực so sánh Pages vs Posts trên WordPress, Breadcrumbs và vai trò của Anchor Text).</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

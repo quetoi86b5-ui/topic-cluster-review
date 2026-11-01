@@ -4,7 +4,7 @@ Bộ báo cáo tiếng Việt cho **Topical Maps Unlocked 2.0**, tổ chức the
 
 ## Tiến độ
 
-**Đang thực hiện, chưa phải toàn bộ khóa học.** Hiện có 11/49 bài thuộc bộ chính được kiểm tra độc lập và đưa vào repo. Bài chưa hoàn thành chỉ xuất hiện dưới dạng mục chờ trong mục lục.
+**Đang thực hiện, chưa phải toàn bộ khóa học.** Hiện có 15/49 bài thuộc bộ chính được kiểm tra độc lập và đưa vào repo. Bài chưa hoàn thành chỉ xuất hiện dưới dạng mục chờ trong mục lục.
 
 - [Mục lục khóa học](index.html)
 - [Bài đầu tiên: New Site vs Existing Site Approaches](01-course-overview/m01-l05.html)
