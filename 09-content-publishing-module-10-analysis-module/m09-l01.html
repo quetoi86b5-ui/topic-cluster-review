@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Content Performance Analysis</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Content Performance Analysis</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 09 & 10: Content Publishing & Analysis Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Tầm quan trọng của việc Đo lường và Theo dõi Hiệu suất Nội dung</a></li><li><a href="#s2">Thiết lập Nhóm nội dung (Content Grouping) theo Silo trong Google Analytics 4</a></li><li><a href="#s3">Khai thác Google Search Console và Ứng dụng Regex tùy chỉnh để Lọc dữ liệu Silo</a></li><li><a href="#s4">Các công cụ theo dõi thứ hạng từ khóa (Rank Trackers): Serposcope, SpaceSerp và ContentRaptor</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01 T02"><h2>1. Tầm quan trọng của việc Đo lường và Theo dõi Hiệu suất Nội dung</h2><p>Trong bài học mở đầu của Học phần Phân tích & Xuất bản (Module 09 & 10), Yoyao tập trung vào một chủ đề mang tính sống còn đối với sự phát triển lâu dài của mọi website: <b>Theo dõi và Đo lường Kết quả Hiệu suất Nội dung (Tracking & Measuring Results)</b>.</p>
+<p>Sau khi đã dồn rất nhiều nguồn lực để nghiên cứu từ khóa, lập Topical Map, tạo Content Brief và xuất bản hàng chục bài viết, bạn không thể bỏ mặc website mà không theo dõi. Việc đo lường hiệu suất giúp bạn giải đáp những câu hỏi chiến lược tối quan trọng:</p>
+<ul>
+  <li>Những bài viết nào và những Silo cụm chủ đề nào đang thực sự thu hút được nhiều lượt truy cập tự nhiên (Organic Traffic) nhất trên toàn trang web?</li>
+  <li>Những trang nào đang có thứ hạng cao nhưng tỷ lệ nhấp chuột (CTR) lại thấp do tiêu đề H1 hoặc mô tả meta chưa thực sự thu hút người dùng?</li>
+  <li>Cụm chủ đề nào đang bị chững lại hoặc tụt hạng cần phải được bổ sung nội dung mới, tối ưu lại bài viết cũ hoặc gia cố hệ thống liên kết nội bộ để lấy lại vị thế?</li>
+</ul>
+<p>Bằng cách theo dõi liên tục và có hệ thống, bạn sẽ biết chính xác nơi nào nên tiếp tục đầu tư nguồn lực mở rộng và nơi nào cần tiến hành tái cơ cấu để tối đa hóa tỷ suất hoàn vốn đầu tư (ROI) cho toàn bộ dự án SEO.</p><figure><img src="photos/m09-l01-03.jpg" alt="Đo lường và theo dõi hiệu suất nội dung theo từng Silo giúp phát hiện cụm chủ đề dẫn đầu và cụm kém hiệu quả." loading="lazy"><figcaption>Đo lường và theo dõi hiệu suất nội dung theo từng Silo giúp phát hiện cụm chủ đề dẫn đầu và cụm kém hiệu quả.</figcaption></figure></section><section class="seg" id="s2" data-src="T02 T03"><h2>2. Thiết lập Nhóm nội dung (Content Grouping) theo Silo trong Google Analytics 4</h2><p>Công cụ đầu tiên và cơ bản nhất được Yoyao hướng dẫn là <b>Google Analytics 4 (GA4)</b> với tính năng đặc biệt: <b>Content Grouping (Nhóm nội dung theo Silo)</b>:</p>
+<p>Thay vì xem xét từng trang URL riêng lẻ một cách rời rạc, tính năng Content Grouping cho phép bạn gom toàn bộ các bài viết thuộc cùng một nhánh Silo trên Topical Map lại thành một nhóm duy nhất (ví dụ: nhóm <i>/dog-food/</i>, nhóm <i>/dog-training/</i>, nhóm <i>/dog-grooming/</i>).</p>
+<p>Lợi ích vượt trội của việc nhóm nội dung:</p>
+<ol>
+  <li>Bạn có thể nhìn thấy ngay tổng lưu lượng truy cập, số lượt xem trang (Pageviews) và thời gian tương tác trung bình của toàn bộ một nhánh Silo thay vì phải cộng thủ công từng bài viết.</li>
+  <li>So sánh trực quan sức mạnh giữa các Silo để xem nhánh chủ đề nào đang mang lại giá trị thương mại lớn nhất và nhận được sự quan tâm nhiều nhất từ độc giả.</li>
+  <li>Dễ dàng báo cáo cho cấp quản lý hoặc khách hàng về bức tranh tổng thể của dự án SEO theo từng mảng chuyên môn mà không bị chìm nghỉm trong hàng ngàn dòng dữ liệu URL riêng lẻ.</li>
+</ol>
+<p>Việc nhóm nội dung theo Silo phản ánh chính xác cấu trúc kiến trúc thông tin mà bạn đã thiết kế trên Topical Map, giúp việc đánh giá hiệu quả trở nên vô cùng mạch lạc.</p><figure><img src="photos/m09-l01-04.jpg" alt="Thiết lập Content Grouping trong Google Analytics 4 để gộp các URL theo Silo danh mục chủ đề." loading="lazy"><figcaption>Thiết lập Content Grouping trong Google Analytics 4 để gộp các URL theo Silo danh mục chủ đề.</figcaption></figure></section><section class="seg" id="s3" data-src="T03 T04"><h2>3. Khai thác Google Search Console và Ứng dụng Regex tùy chỉnh để Lọc dữ liệu Silo</h2><p>Bên cạnh GA4, công cụ cung cấp dữ liệu tìm kiếm chân thực nhất chính là <b>Google Search Console (GSC)</b>. Tuy nhiên, GSC có một nhược điểm cố hữu: Bạn có thể tìm thấy mọi thông tin về thứ hạng và số lần hiển thị, nhưng giao diện mặc định không cho phép bạn lưu lại các bộ lọc phức tạp.</p>
+<p>Yoyao chia sẻ giải pháp chuyên nghiệp để khắc phục hạn chế này: <b>Tạo và lưu trữ các công thức biểu thức chính quy (Custom Regex Formulas)</b>:</p>
+<ul>
+  <li>Bạn soạn thảo sẵn các đoạn mã Regex lọc đường dẫn URL tương ứng với từng Silo chủ đề (ví dụ lọc tất cả URL chứa <code>.*dog-food.*</code> hoặc kết hợp nhiều biến thể từ khóa phức tạp).</li>
+  <li>Lưu các chuỗi Regex này vào một bảng tính quản lý riêng. Mỗi khi cần phân tích một Silo cụ thể trong GSC, bạn chỉ cần sao chép chuỗi Regex tương ứng và dán vào bộ lọc trang (Page filter) của GSC.</li>
+  <li>GSC sẽ lập tức hiển thị báo cáo hiệu suất chuyên biệt cho Silo đó: Tổng số lượt nhấp, tổng số lần hiển thị, CTR trung bình và vị trí xếp hạng trung bình của riêng cụm chủ đề mục tiêu.</li>
+</ul>
+<p>Kỹ thuật này giúp bạn tiết kiệm hàng giờ thao tác thủ công, loại bỏ sai sót và tạo ra các báo cáo kiểm toán hiệu suất cực kỳ chuẩn xác và chuyên nghiệp cho từng phân nhánh nội dung.</p><figure><img src="photos/m09-l01-05.jpg" alt="Sử dụng biểu thức chính quy (Custom Regex) trong Google Search Console để lọc báo cáo thứ hạng theo từng Silo." loading="lazy"><figcaption>Sử dụng biểu thức chính quy (Custom Regex) trong Google Search Console để lọc báo cáo thứ hạng theo từng Silo.</figcaption></figure></section><section class="seg" id="s4" data-src="T04"><h2>4. Các công cụ theo dõi thứ hạng từ khóa (Rank Trackers): Serposcope, SpaceSerp và ContentRaptor</h2><p>Để theo dõi sát sao sự biến động vị trí của hàng trăm từ khóa mục tiêu trên SERP, Yoyao giới thiệu 3 giải pháp công cụ theo dõi thứ hạng (Rank Trackers) từ miễn phí đến trả phí chuyên sâu:</p>
+<ol>
+  <li><b>Serposcope (Miễn phí hoàn toàn / Tự host)</b>:
+    <ul>
+      <li>Một phần mềm mã nguồn mở chạy trực tiếp trên máy chủ nội bộ (cổng 6333) của bạn.</li>
+      <li>Hoàn toàn miễn phí, không giới hạn số lượng từ khóa và số lượng website theo dõi, cực kỳ phù hợp cho các nhà làm SEO có ngân sách tiết kiệm và muốn tự chủ hoàn toàn dữ liệu của mình mà không lo chi phí hàng tháng.</li>
+    </ul>
+  </li>
+  <li><b>SpaceSerp (Giải pháp tiết kiệm chi phí qua ưu đãi trọn đời)</b>:
+    <ul>
+      <li>Cung cấp gói theo dõi khoảng 15.000 lượt tìm kiếm mỗi tháng (tương đương khoảng 500 từ khóa kiểm tra hàng ngày) với mức giá khoảng $59 thông qua các ưu đãi trọn đời (Lifetime Deal) trên AppSumo. Bạn có thể xếp chồng nhiều mã (Stack multiple codes) để mở rộng quy mô theo dõi khi website phát triển lớn mạnh hơn.</li>
+    </ul>
+  </li>
+  <li><b>ContentRaptor (Công cụ phân tích và tối ưu hóa nội dung chuyên sâu)</b>:
+    <ul>
+      <li>Một giải pháp trả phí cao cấp (bắt đầu từ $10+) tích hợp đồng thời cả tính năng theo dõi thứ hạng từ khóa và các công cụ tối ưu hóa nội dung bài viết On-page. Bạn có thể dễ dàng bổ sung thêm website hoặc gói 150 từ khóa với chi phí linh hoạt chỉ $10 cho mỗi gói bổ sung.</li>
+    </ul>
+  </li>
+</ol>
+<p>Việc kết hợp hài hòa giữa Google Analytics, Search Console và một công cụ theo dõi thứ hạng tự động sẽ tạo nên một hệ thống giám sát hiệu suất hoàn chỉnh, giúp bạn luôn chủ động nắm bắt nhịp đập của website và phản ứng kịp thời trước mọi biến động thuật toán.</p>
+<p>Nhờ đó, bạn sẽ luôn duy trì được lợi thế cạnh tranh áp đảo và bảo vệ vững chắc thành quả xây dựng thẩm quyền chủ đề của mình.</p><figure><img src="photos/m09-l01-12.jpg" alt="Tổng quan các công cụ theo dõi thứ hạng: Serposcope miễn phí tự host, SpaceSerp và ContentRaptor trả phí chuyên sâu." loading="lazy"><figcaption>Tổng quan các công cụ theo dõi thứ hạng: Serposcope miễn phí tự host, SpaceSerp và ContentRaptor trả phí chuyên sâu.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 01-Content Performance Analysis (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li><li>Đối chiếu tài liệu đính kèm: <i>Tài Liệu/Yoyao Hsueh - Topical Maps Unlocked 2.0/10-Analysis Module/01-Content Performance Analysis.pdf</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
