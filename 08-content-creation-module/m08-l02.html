@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Content Brief Creation</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Content Brief Creation</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 08: Content Creation Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Bản mô tả nội dung (Content Brief) là gì và tại sao bắt buộc phải tạo?</a></li><li><a href="#s2">Bảy thành phần cốt lõi cấu thành một Content Brief hoàn chỉnh</a></li><li><a href="#s3">Chi tiết hóa từng phân đoạn H2, H3 và hướng dẫn cụ thể cho người viết</a></li><li><a href="#s4">Ai là người chịu trách nhiệm tạo Content Brief trong tổ chức?</a></li><li><a href="#s5">Ứng dụng AI để tăng tốc quy trình tạo Brief: Ưu nhược điểm và Thực tế</a></li><li><a href="#s6">Mẫu câu lệnh Prompt chuẩn chỉnh và Ca điển hình thực tế: How to Choose Dog Food</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01 T02"><h2>1. Bản mô tả nội dung (Content Brief) là gì và tại sao bắt buộc phải tạo?</h2><p>Trong bài học thứ hai, Yoyao phân tích chi tiết tài liệu quan trọng bậc nhất của khâu sản xuất: <b>Content Brief (Bản định hướng / tóm tắt nội dung bài viết)</b>.</p>
+<p>Nhiều người quản lý thường có suy nghĩ sai lầm rằng việc lập dàn ý chi tiết là <i>lãng phí thời gian</i> và muốn người viết bắt tay vào gõ bài ngay lập tức. Tuy nhiên, Yoyao khẳng định: <b>Content Brief thực tế lại giúp bạn tiết kiệm được rất nhiều thời gian và tiền bạc!</b></p>
+<p>Lợi ích vượt trội của một bản Content Brief chuẩn chỉ:</p>
+<ul>
+  <li>Định hướng chuẩn xác cho người viết (writers), biên tập viên (editors) và trợ lý ảo (VAs) cùng nhìn về một hướng, loại bỏ sự mơ hồ trong quá trình triển khai nội dung.</li>
+  <li>Người viết có sẵn khung sườn logic và đầy đủ dữ liệu đã được nghiên cứu kỹ lưỡng, giúp họ hoàn thành bài viết nhanh hơn gấp 2 đến 3 lần mà không bị bí ý tưởng hay mất phương hướng giữa chừng.</li>
+  <li>Giữ cho nội dung luôn bám sát giọng điệu, văn phong và bản sắc độc đáo của thương hiệu (Brand Voice), đảm bảo tính nhất quán trên toàn bộ website.</li>
+  <li>Tối ưu hóa SEO tối đa: Không bao giờ bỏ sót các chủ đề phụ, câu hỏi thường gặp, số liệu thực tế hay các thực thể quan trọng mà thuật toán Google yêu cầu.</li>
+</ul>
+<p>Khi có một bản brief rõ ràng, biên tập viên sẽ không phải tốn hàng giờ đồng hồ quý báu để sửa chữa các lỗi lạc đề hay yêu cầu người viết phải đập đi viết lại toàn bộ bài viết từ đầu. Nó tạo nên một quy trình vận hành có tính lặp lại cao và đem lại sự yên tâm tuyệt đối cho nhà quản trị.</p>
+<p>Một bản brief chất lượng cao sẽ biến mục tiêu tiếp thị thành một bộ hướng dẫn thực thi rõ ràng, giúp bất kỳ người viết nào cũng có thể tạo ra sản phẩm đúng ý ngay từ bản thảo đầu tiên.</p><figure><img src="photos/m08-l02-03.jpg" alt="Content Brief giúp đồng bộ đội ngũ, tiết kiệm thời gian, tối ưu chi phí và đảm bảo bài viết chuẩn SEO." loading="lazy"><figcaption>Content Brief giúp đồng bộ đội ngũ, tiết kiệm thời gian, tối ưu chi phí và đảm bảo bài viết chuẩn SEO.</figcaption></figure></section><section class="seg" id="s2" data-src="T02 T03 T04"><h2>2. Bảy thành phần cốt lõi cấu thành một Content Brief hoàn chỉnh</h2><p>Dựa trên tài liệu mẫu PDF chuẩn mực của khóa học (<i>02-Content Brief Creation.pdf</i>), Yoyao mổ xẻ 7 thành phần cấu tạo nên một Content Brief chuyên nghiệp:</p>
+<p>Mỗi thành phần đóng vai trò như một mắt xích không thể tách rời, đảm bảo cho bài viết vừa có tính chuyên môn sâu sắc vừa đáp ứng hoàn hảo các tiêu chuẩn kỹ thuật On-page khắt khe nhất của các công cụ tìm kiếm.</p>
+<ol>
+  <li><b>Keywords (Từ khóa mục tiêu)</b>: Từ khóa chính và danh sách các từ khóa ngữ nghĩa liên quan (LSI/NLP keywords) cần phải phân bổ tự nhiên trong các phân đoạn để củng cố tín hiệu chủ đề.</li>
+  <li><b>Article Title (Tiêu đề bài viết)</b>: Tiêu đề H1 dự kiến chuẩn SEO và có sức hấp dẫn cao để tối ưu tỷ lệ nhấp chuột (CTR) khi hiển thị trên trang kết quả tìm kiếm.</li>
+  <li><b>Goals (Mục tiêu bài viết)</b>: Xác định rõ mục đích xuất bản: giải quyết thắc mắc của độc giả, thu hút khách hàng tiềm năng hay thúc đẩy bán hàng, và bài viết này thuộc giai đoạn nào trong hành trình người mua (Nhận thức, Cân nhắc hay Quyết định).</li>
+  <li><b>Language (Ngôn ngữ)</b>: Quy định cụ thể biến thể ngôn ngữ (ví dụ: Tiếng Anh - Mỹ US English cho độc giả Hoa Kỳ) nhằm tránh nhầm lẫn về từ vựng và ngữ pháp.</li>
+  <li><b>Word Count (Độ dài số từ)</b>: Khoảng số từ mục tiêu cần đạt được (ví dụ: 1500–2000 từ) dựa trên phân tích độ dài trung bình của các đối thủ hàng đầu.</li>
+  <li><b>Tone / Style (Giọng điệu và Văn phong)</b>: Thân thiện, cung cấp thông tin hữu ích, trò chuyện gần gũi nhưng vẫn giữ tính chuyên nghiệp, tránh các thuật ngữ sáo rỗng khó hiểu.</li>
+  <li><b>References (Tài liệu tham khảo)</b>: Danh sách các bài viết đang dẫn đầu của đối thủ để người viết nắm bắt mặt bằng chất lượng cần phải vượt qua và những thiếu sót cần bổ khuyết.</li>
+</ol>
+<p>Ngoài ra, phần sản phẩm bàn giao khác (Other Deliverables) sẽ chỉ rõ các yêu cầu về hình ảnh chụp màn hình, ảnh đồ họa infographic hay video cần nhúng vào bài viết để nâng cao trải nghiệm người dùng.</p>
+<p>Việc chuẩn hóa 7 yếu tố này giúp toàn bộ các bài viết trên trang web đều đạt được sự đồng bộ hoàn hảo về phong cách và chất lượng.</p><figure><img src="photos/m08-l02-07.jpg" alt="Bảy thành phần của Brief: Ngôn ngữ, Số từ, Giọng văn, Tài liệu tham khảo, Từ khóa, Tiêu đề và Mục tiêu." loading="lazy"><figcaption>Bảy thành phần của Brief: Ngôn ngữ, Số từ, Giọng văn, Tài liệu tham khảo, Từ khóa, Tiêu đề và Mục tiêu.</figcaption></figure></section><section class="seg" id="s3" data-src="T04 T05"><h2>3. Chi tiết hóa từng phân đoạn H2, H3 và hướng dẫn cụ thể cho người viết</h2><p>Phần quan trọng nhất chiếm trọn tâm huyết của người lập Brief chính là cấu trúc khung bài chi tiết (<b>Content Sections & Instructions</b>):</p>
+<ul>
+  <li><b>Phần Mở đầu (Introduction)</b>: Hướng dẫn người viết cách mở bài: Đánh thẳng vào nỗi đau của độc giả, tạo sự đồng cảm và hứa hẹn giải pháp rõ ràng trong bài viết. Nêu rõ loại mở đầu mong muốn (câu chuyện, số liệu giật mình hay câu hỏi trực diện).</li>
+  <li><b>Các đề mục H2, H3, H4</b>: Liệt kê danh sách tiêu đề phụ theo cấu trúc phân cấp chặt chẽ, mạch lạc và bám sát ý định tìm kiếm.</li>
+  <li><b>Chỉ dẫn nội dung cụ thể (Section Instructions)</b>: Dưới mỗi đề mục H2/H3, người lập Brief phải gạch đầu dòng từ 4 đến 7 ý chính bắt buộc người viết phải đề cập, kèm theo số liệu thống kê, dữ kiện thực tế cần đưa vào.</li>
+  <li><b>Chỉ định liên kết nội bộ và thực thể (Internal Links & Entities)</b>: Nêu rõ bài viết này cần chèn liên kết trỏ về những trang nào trên website, sử dụng neo văn bản (anchor text) nào, và cần nhắc đến các thực thể (entities) nào để Google hiểu rõ ngữ cảnh.</li>
+  <li><b>Giới hạn độ dài từng phân đoạn</b>: Đặt ra khuyến nghị số từ cho mỗi phần (ví dụ: mỗi phần H2/H3 không nên vượt quá 300 từ) để giúp bài viết chặt chẽ, súc tích và tránh hiện tượng lan man, dài dòng.</li>
+</ul>
+<p>Các chỉ dẫn chi tiết này giúp người viết tự tin triển khai bài viết nhanh chóng mà không lo thiếu sót các yếu tố cốt lõi của chủ đề.</p><figure><img src="photos/m08-l02-09.jpg" alt="Chi tiết hóa cấu trúc phân đoạn H2, H3, H4 kèm chỉ dẫn viết bài, dữ liệu số liệu và liên kết nội bộ." loading="lazy"><figcaption>Chi tiết hóa cấu trúc phân đoạn H2, H3, H4 kèm chỉ dẫn viết bài, dữ liệu số liệu và liên kết nội bộ.</figcaption></figure></section><section class="seg" id="s4" data-src="T05 T06"><h2>4. Ai là người chịu trách nhiệm tạo Content Brief trong tổ chức?</h2><p>Ai nên là người đảm nhận công việc quan trọng này? Yoyao phân tích các vai trò trong tổ chức:</p>
+<p>Người tạo Brief có thể là chuyên gia SEO, người viết kỳ cựu, biên tập viên, đội ngũ tiếp thị hoặc một trợ lý ảo (VA) được đào tạo bài bản. Bất kể là ai, người chịu trách nhiệm lập Brief bắt buộc phải hội tụ 4 năng lực cốt lõi:</p>
+<ol>
+  <li><b>Thấu hiểu sâu sắc bản sắc thương hiệu (Brand Identity)</b>: Nắm vững giá trị cốt lõi, sứ mệnh và phong cách truyền thông đặc trưng của doanh nghiệp.</li>
+  <li><b>Hiểu rõ chân dung và nhu cầu khách hàng (Buyer Persona)</b>: Biết chính xác độc giả đang gặp khó khăn gì, trình độ hiểu biết đến đâu và cần câu trả lời như thế nào.</li>
+  <li><b>Có kỹ năng nghiên cứu sâu sắc (Deep Research)</b>: Khả năng tìm kiếm tài liệu chuyên sâu, số liệu kiểm chứng và thông tin độc bản từ các nguồn uy tín.</li>
+  <li><b>Thành thạo phân tích SERP (SERP Analysis)</b>: Quan sát và giải mã được tại sao các đối thủ hàng đầu lại được Google ưu ái xếp hạng cao trên trang nhất.</li>
+</ol>
+<p>Khi người tạo brief có đầy đủ các kỹ năng này, bản brief sẽ trở thành một cây cầu nối hoàn hảo giữa chiến lược kinh doanh và ngòi bút của người viết.</p><figure><img src="photos/m08-l02-10.jpg" alt="Người tạo Brief có thể là SEO, Writer, Editor, VA hoặc chuyên gia am hiểu thương hiệu và độc giả." loading="lazy"><figcaption>Người tạo Brief có thể là SEO, Writer, Editor, VA hoặc chuyên gia am hiểu thương hiệu và độc giả.</figcaption></figure></section><section class="seg" id="s5" data-src="T06 T07"><h2>5. Ứng dụng AI để tăng tốc quy trình tạo Brief: Ưu nhược điểm và Thực tế</h2><p>Liệu chúng ta có thể sử dụng AI để tự động hóa khâu tạo Content Brief hay không? Yoyao đưa ra lời khuyên xác đáng:</p>
+<p><b>Không nên sử dụng AI theo kiểu "mì ăn liền" nguyên bản (Don't use AI as-is)!</b> Các hệ thống AI thông thường thường bị trễ dữ liệu từ 6 tháng trở lên và không thể tự mình cào dữ liệu trực tiếp từ các trang web mới nhất của đối thủ, bởi vì ngày càng nhiều nhà xuất bản chặn bot AI thu thập thông tin.</p>
+<p>Tuy nhiên, bạn hoàn toàn có thể kết hợp các công cụ tìm kiếm AI thế hệ mới như <b>Perplexity.ai</b> để truy xuất các nguồn tài liệu và số liệu mới nhất theo thời gian thực. Sau đó, con người sẽ tổng hợp các điểm cốt lõi từ đối thủ cạnh tranh và đưa vào câu lệnh mẫu (Prompt) để AI hỗ trợ sắp xếp cấu trúc dàn ý H2, H3 một cách nhanh chóng và khoa học.</p>
+<p>Sự kết hợp giữa trí tuệ con người trong khâu phân tích chiến lược và tốc độ xử lý của AI trong khâu cấu trúc hóa sẽ tạo ra những bản brief chất lượng cao trong thời gian kỷ lục.</p><figure><img src="photos/m08-l02-12.jpg" alt="Ứng dụng AI hỗ trợ tạo Brief: Cẩn trọng với dữ liệu cũ, kết hợp công cụ tìm kiếm AI Perplexity để có dữ liệu mới." loading="lazy"><figcaption>Ứng dụng AI hỗ trợ tạo Brief: Cẩn trọng với dữ liệu cũ, kết hợp công cụ tìm kiếm AI Perplexity để có dữ liệu mới.</figcaption></figure></section><section class="seg" id="s6" data-src="T07 T08"><h2>6. Mẫu câu lệnh Prompt chuẩn chỉnh và Ca điển hình thực tế: How to Choose Dog Food</h2><p>Yoyao chia sẻ câu lệnh mẫu (Prompt Template) đắt giá mà ông sử dụng hàng ngày để yêu cầu AI tạo Brief:</p>
+<blockquote style="background:#f8fafc; border-left:4px solid #3b82f6; padding:12px; margin:16px 0; font-family:monospace; font-size:13px;">
+"Create a comprehensive content brief for the writer that incorporates all the [Key Information From Competitors] into the [Article Outline] of H2 and H3 heading sections. Work section-by-section when creating the content brief.<br><br>
+Follow these instructions:<br>
+- Fulfill the search intent and optimize for the [Target Keyword].<br>
+- Take each piece of key information from competitors and add them to the heading section that is most relevant.<br>
+- You MUST include at least 4-7 bullet points under each heading as instructions for the writer.<br>
+- Add one extra bullet point to each section recommending relevant keywords and entities to add.<br>
+- Add a bullet point: This section should be under 300 words.<br><br>
+Here is the information to use:<br>
+[Target Keyword]:<br>
+[Article Outline]:<br>
+[Key Information From Competitors]:<br>
+[Keywords and Entities List]:"
+</blockquote>
+<p>Áp dụng vào ví dụ thực tế <b>"How to Choose Dog Food" (Cách chọn thức ăn cho chó)</b>: Bản Brief hoàn chỉnh được tạo ra với đầy đủ các phân đoạn phân tích độ tuổi của chó (Puppy vs Adult), kích thước giống chó, thành phần dinh dưỡng bắt buộc (protein, chất béo) và các chứng chỉ kiểm nghiệm an toàn AAFCO. Người viết khi cầm bản Brief này trong tay có thể tự tin viết một bài viết toàn diện, chuẩn chuyên gia mà không cần phải băn khoăn bất kỳ điều gì.</p>
+<p>Quy trình này biến việc tạo brief từ một công việc thủ công mất nhiều giờ đồng hồ trở thành một quy trình bán tự động chuẩn mực, chính xác và có thể nhân bản dễ dàng cho hàng trăm bài viết trên website.</p>
+<p>Người quản trị chỉ cần dành ra 15 phút rà soát lần cuối là đã có thể tự tin bàn giao bản brief cho các cây bút triển khai với độ chính xác tuyệt đối.</p>
+<p>Đây chính là bí quyết giúp bạn mở rộng quy mô sản xuất nội dung một cách bền vững mà không bao giờ bị suy giảm chất lượng.</p><figure><img src="photos/m08-l02-15.jpg" alt="Mẫu câu lệnh chi tiết yêu cầu AI tạo Content Brief hoàn chỉnh kèm ví dụ thực tế How to choose dog food." loading="lazy"><figcaption>Mẫu câu lệnh chi tiết yêu cầu AI tạo Content Brief hoàn chỉnh kèm ví dụ thực tế How to choose dog food.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 02-Content Brief Creation (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li><li>Đối chiếu tài liệu đính kèm: <i>Tài Liệu/Yoyao Hsueh - Topical Maps Unlocked 2.0/08-Content Creation Module/02-Content Brief Creation.pdf</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

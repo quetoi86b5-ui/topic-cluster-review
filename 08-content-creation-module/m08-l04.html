@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Topical Map and Internal Linking Strategy</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Topical Map and Internal Linking Strategy</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 08: Content Creation Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Cấu trúc phân cấp chủ đề và Nguyên lý dòng chảy sức mạnh liên kết (Link Juice)</a></li><li><a href="#s2">Kỹ thuật liên kết nội bộ theo chiều dọc: Đi xuống (Down) và Đi lên (Up)</a></li><li><a href="#s3">Kỹ thuật liên kết nội bộ theo chiều ngang (Cross-linking / Sideways) trong cùng Silo</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01 T02"><h2>1. Cấu trúc phân cấp chủ đề và Nguyên lý dòng chảy sức mạnh liên kết (Link Juice)</h2><p>Trong bài học thứ tư, Yoyao trình bày chiến lược kiến trúc liên kết nội bộ dựa trên cấu trúc phân cấp chủ đề (Topical Hierarchy). Mô hình liên kết nội bộ xuất sắc phải phản ánh chính xác mối quan hệ logic giữa các tầng danh mục:</p>
+<p>Từ cấp độ bao quát nhất là <b>Tên miền (Domain)</b> &rarr; các <b>Chủ đề chính (Main Topics)</b> &rarr; các <b>Chủ đề phụ cấp 1, cấp 2 (Subtopics)</b> &rarr; và cuối cùng là các <b>Trang bài viết chi tiết riêng lẻ (Individual Pages)</b>. Đi từ rộng (Broad) đến hẹp (Narrow).</p>
+<p><b>Nguyên lý dòng chảy sức mạnh liên kết (Link Juice Flow)</b>:</p>
+<ul>
+  <li>Dòng chảy sức mạnh luân chuyển linh hoạt xuyên suốt website thông qua các đường liên kết nội bộ.</li>
+  <li>Trong thực tế, các trang bài viết chi tiết ở cụm ngách thường nhận được nhiều liên kết tự nhiên từ bên ngoài (Backlinks) hơn cả các trang chủ đề chính vì chúng chứa thông tin chuyên sâu độc bản. Dòng sức mạnh này sau đó sẽ được truyền ngược lên phía trên (Pass up) để nuôi dưỡng Trang trụ cột.</li>
+  <li>Đồng thời, sức mạnh từ trang chủ (Home page backlink juice) cũng chảy tuần tự xuống các chủ đề chính và các bài viết con theo cấu trúc phân cấp.</li>
+</ul>
+<p>Sự kết hợp giữa dòng chảy đi xuống và dòng chảy đi lên tạo ra một hệ thống tuần hoàn khép kín, phân phối đều đặn sức mạnh SEO đến từng ngóc ngách của website.</p><figure><img src="photos/m08-l04-04.jpg" alt="Mối quan hệ phân cấp chủ đề từ rộng đến hẹp xác định dòng chảy liên kết nội bộ xuyên suốt website." loading="lazy"><figcaption>Mối quan hệ phân cấp chủ đề từ rộng đến hẹp xác định dòng chảy liên kết nội bộ xuyên suốt website.</figcaption></figure></section><section class="seg" id="s2" data-src="T02 T03"><h2>2. Kỹ thuật liên kết nội bộ theo chiều dọc: Đi xuống (Down) và Đi lên (Up)</h2><p>Yoyao minh họa trực quan kỹ thuật liên kết hai chiều theo phương thẳng đứng thông qua ví dụ ngành nhạc cụ (Musical Instruments):</p>
+<p>Ví dụ: Nhạc cụ dây (String) &rarr; Đàn Cello, Violin, Bass &rarr; Thương hiệu (Brands), Kích thước (Sizes), Dây đàn (Strings).</p>
+<ul>
+  <li><b>Liên kết đi xuống (Internally Linking Down)</b>: Trang trụ cột cấp cao (Main Topic pillar page) chủ động đặt liên kết trỏ xuống tất cả các trang chủ đề con trực thuộc. Ví dụ: Trang <i>Đàn Violin</i> đặt liên kết trỏ xuống trang <i>Kích thước đàn Violin</i> và <i>Các thương hiệu đàn Violin tốt nhất</i>. Điều này giúp bot tìm kiếm và người dùng dễ dàng khám phá toàn bộ các khía cạnh chi tiết.</li>
+  <li><b>Liên kết đi lên (Internally Linking Up)</b>: Mọi trang chi tiết cấp dưới (Subtopic pages) bắt buộc phải có một liên kết trỏ ngược lên Trang trụ cột trực tiếp của nó. Ví dụ: Bài viết <i>Kích thước đàn Violin</i> bắt buộc phải có một liên kết theo ngữ cảnh trỏ ngược về trang trụ cột <i>Đàn Violin</i>. Điều này giúp tập trung toàn bộ thẩm quyền chuyên môn tích lũy từ các bài con về nâng đỡ cho trang trụ cột xếp hạng các từ khóa ngắn đắt giá.</li>
+</ul>
+<p>Kỹ thuật liên kết hai chiều này giúp Google hiểu rõ cấu trúc tổ chức của website và gia tăng tính liên quan ngữ nghĩa giữa các trang bài viết.</p><figure><img src="photos/m08-l04-10.jpg" alt="Kỹ thuật liên kết chiều dọc: Trang trụ cột liên kết xuống các trang con, và các trang con liên kết ngược lên trụ cột." loading="lazy"><figcaption>Kỹ thuật liên kết chiều dọc: Trang trụ cột liên kết xuống các trang con, và các trang con liên kết ngược lên trụ cột.</figcaption></figure></section><section class="seg" id="s3" data-src="T03 T04"><h2>3. Kỹ thuật liên kết nội bộ theo chiều ngang (Cross-linking / Sideways) trong cùng Silo</h2><p>Bên cạnh liên kết dọc lên xuống, yếu tố tạo nên mạng lưới chủ đề bất khả chiến bại chính là <b>Liên kết ngang (Horizontally Linking / Cross-linking)</b>:</p>
+<p>Các trang bài viết con nằm cùng một cấp độ trong một cụm chủ đề sẽ đặt liên kết chéo sang nhau khi có sự liên quan mật thiết về ngữ cảnh:</p>
+<p>Ví dụ: Trong cụm chủ đề về <i>Đàn Violin</i>, bài viết <i>Cách chọn kích thước đàn Violin cho người mới bắt đầu</i> hoàn toàn có thể đặt liên kết ngang sang bài viết <i>Top 5 thương hiệu đàn Violin uy tín nhất hiện nay</i> và bài <i>Cách chọn dây đàn Violin phù hợp</i>.</p>
+<p><b>Quy tắc giới hạn ranh giới Silo</b>: Các bài viết chỉ nên liên kết ngang với các bài viết <i>cùng nằm trong một Silo trực thuộc</i>. Tránh việc liên kết chéo bừa bãi giữa các Silo không liên quan (ví dụ: bài viết về đàn Violin lại liên kết ngang sang bài viết về trống gõ Percussion), vì điều đó sẽ làm rò rỉ dòng chảy chủ đề và làm mờ nhạt ranh giới ngữ nghĩa của từng chuyên mục.</p>
+<p>Tuân thủ nghiêm ngặt ranh giới Silo là bí quyết cốt lõi giúp các trang web hàng đầu xây dựng Topical Authority vững chắc như bàn thạch.</p><figure><img src="photos/m08-l04-16.jpg" alt="Kỹ thuật liên kết chiều ngang: Các bài viết con cùng cấp trong một cụm liên kết chéo với nhau để bổ trợ thông tin." loading="lazy"><figcaption>Kỹ thuật liên kết chiều ngang: Các bài viết con cùng cấp trong một cụm liên kết chéo với nhau để bổ trợ thông tin.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 04-Topical Map and Internal Linking Strategy (Video bài học chính).</li>
+    <li>Đối chiếu ngữ nghĩa với bản tiếng Anh: <i>Bản Tiếng Anh/08-Content Creation Module/04-Topical Map and Internal Linking Strategy.mp4</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

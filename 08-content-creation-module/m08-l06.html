@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cannibalization, Pruning, and Updating Content</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Cannibalization, Pruning, and Updating Content</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 08: Content Creation Module</p>
+  <nav class="toc"><ol><li><a href="#s1">Hiện tượng ăn thịt từ khóa (Keyword Cannibalization) và Cách thức xử lý</a></li><li><a href="#s2">Cách thức (Hạ) Tối ưu hóa nội dung dựa trên Bảng tính Topical Map</a></li><li><a href="#s3">Biến Thứ hạng vô tình (Accidental Rankings) thành Cơ hội vàng để bứt phá</a></li><li><a href="#s4">Nghiên cứu ca điển hình TheSprucePets.com: Lấp đầy khoảng trống để thống trị ngách</a></li></ol></nav>
+  <section class="seg" id="s1" data-src="T01 T02"><h2>1. Hiện tượng ăn thịt từ khóa (Keyword Cannibalization) và Cách thức xử lý</h2><p>Bài học cuối cùng của Học phần 08 giải quyết những bài toán hóc búa nhất trong quá trình vận hành website dài hạn: <b>Ăn thịt từ khóa (Cannibalization), Cắt tỉa nội dung rác (Pruning) và Cập nhật bài viết cũ (Updating)</b>.</p>
+<p><b>Keyword Cannibalization (Hiện tượng ăn thịt từ khóa)</b> xảy ra khi trên website của bạn có từ hai trang bài viết trở lên cùng nhắm vào một từ khóa hoặc cùng một ý định tìm kiếm. Hậu quả là Google bị bối rối không biết nên xếp hạng trang nào, dẫn đến việc cả hai trang đều bị tụt hạng hoặc nhảy nhót thứ hạng liên tục ngoài Top 20.</p>
+<p>Quy trình giải quyết chuẩn xác của Yoyao:</p>
+<ol>
+  <li>Xác định đâu là trang bài viết chính mà bạn <i>thực sự mong muốn xếp hạng</i> cho từ khóa đó.</li>
+  <li><b>Tối ưu hóa mạnh mẽ trang đúng (Optimize the right page)</b>: Bổ sung từ khóa, thực thể và làm phong phú nội dung của trang mục tiêu.</li>
+  <li><b>Hạ tối ưu hóa trang sai (De-optimize the wrong page)</b>: Thay đổi tiêu đề, các thẻ H2/H3 của bài viết sai để nó chuyển sang một góc nhìn ngách khác. Đặc biệt, hãy điều chỉnh lại các liên kết nội bộ: Không dùng từ khóa mục tiêu để trỏ về trang sai nữa, mà hãy đặt một liên kết từ trang sai trỏ ngược về trang đúng!</li>
+  <li>Nếu trang sai quá mỏng hoặc không mang lại giá trị: Hãy sáp nhập (merge) nội dung của nó vào trang đúng và thiết lập lệnh chuyển hướng 301 Redirect vĩnh viễn.</li>
+</ol>
+<p>Việc xử lý triệt để hiện tượng ăn thịt từ khóa sẽ ngay lập tức giải phóng sức mạnh tiềm ẩn của website, giúp trang đúng nhanh chóng bứt phá lên Top đầu.</p>
+<p>Điều quan trọng là bạn phải theo dõi chặt chẽ dữ liệu thứ hạng sau khi thực hiện điều chỉnh để đánh giá phản ứng của Google và có những tinh chỉnh kịp thời.</p><figure><img src="photos/m08-l06-02.jpg" alt="Hiện tượng ăn thịt từ khóa xảy ra khi nhiều trang trên cùng một website cạnh tranh cùng một từ khóa." loading="lazy"><figcaption>Hiện tượng ăn thịt từ khóa xảy ra khi nhiều trang trên cùng một website cạnh tranh cùng một từ khóa.</figcaption></figure></section><section class="seg" id="s2" data-src="T02 T03"><h2>2. Cách thức (Hạ) Tối ưu hóa nội dung dựa trên Bảng tính Topical Map</h2><p>Bảng tính Topical Map tiếp tục đóng vai trò là kim chỉ nam giúp bạn thực hiện quá trình <b>(De)Optimize (Tối ưu hoặc Hạ tối ưu)</b> một cách chính xác tuyệt đối:</p>
+<p>Nó cung cấp một cái nhìn toàn cảnh về cách các chủ đề và từ khóa được phân bổ, giúp bạn tránh được những quyết định cảm tính khi sửa đổi nội dung bài viết.</p>
+<ul>
+  <li>Bạn mở bảng tính Topical Map và đối chiếu cụm từ khóa của từng trang bài viết.</li>
+  <li>Điều chỉnh nội dung và mật độ từ khóa của trang bài viết sao cho bám sát 100% các từ khóa được phân bổ riêng cho trang đó trong cụm, loại bỏ các từ khóa bị lấn sân sang phạm vi của trang khác.</li>
+  <li>Điều chỉnh lại hệ thống neo văn bản (anchor text) của các liên kết nội bộ trỏ đến các bài viết đó để tái định vị chính xác ngữ cảnh chuyên môn cho từng URL.</li>
+</ul>
+<p>Khi các bài viết được tối ưu hóa chuẩn mực và phân định ranh giới rành mạch theo đúng Topical Map, bạn sẽ nhìn thấy thứ hạng của toàn bộ website tăng trưởng đồng loạt một cách vững chắc và trật tự.</p>
+<p>Điều này cũng ngăn ngừa tối đa nguy cơ các bài viết mới xuất bản vô tình ăn thịt thứ hạng của các bài viết cũ đã có vị trí cao trên Google, giữ cho toàn bộ cấu trúc nội dung luôn hoạt động trơn tru.</p><figure><img src="photos/m08-l06-06.jpg" alt="Sử dụng Topical Map để điều chỉnh từ khóa, neo văn bản và liên kết nội bộ khi tối ưu hoặc hạ tối ưu hóa bài viết." loading="lazy"><figcaption>Sử dụng Topical Map để điều chỉnh từ khóa, neo văn bản và liên kết nội bộ khi tối ưu hoặc hạ tối ưu hóa bài viết.</figcaption></figure></section><section class="seg" id="s3" data-src="T03 T04"><h2>3. Biến Thứ hạng vô tình (Accidental Rankings) thành Cơ hội vàng để bứt phá</h2><p>Trong quá trình theo dõi hiệu suất website, bạn sẽ thường xuyên bắt gặp hiện tượng <b>Accidental Rankings (Thứ hạng vô tình)</b>:</p>
+<p>Đây là những từ khóa hoặc chủ đề mà bạn chưa từng chủ ý viết một bài viết riêng biệt nào để nhắm tới, nhưng Google vẫn vô tình xếp hạng một bài viết liên quan của bạn ở trang 2 hoặc trang 3 (Top 11–30).</p>
+<p>Yoyao nhấn mạnh: <b>Những thứ hạng vô tình này chính là Cơ hội vàng mười (Golden Opportunities)!</b> Điều đó chứng tỏ Google đã bắt đầu nhận diện website của bạn có thẩm quyền trong ngách đó và thuật toán đang thực sự <i>"muốn"</i> xếp hạng website của bạn. Việc của bạn lúc này vô cùng đơn giản: Hãy chiều lòng Google bằng cách <b>sản xuất ngay một bài viết chuyên sâu mới nhắm trúng đích từ khóa đó</b>! Ngay khi bài viết mới được xuất bản và liên kết nội bộ, nó sẽ lập tức nhảy vọt thẳng vào Top 5 kết quả tìm kiếm.</p>
+<p>Đừng bao giờ bỏ qua những tín hiệu quý giá này trong Google Search Console, vì đó là con đường ngắn nhất để gia tăng lưu lượng truy cập chất lượng cao.</p><figure><img src="photos/m08-l06-10.jpg" alt="Thứ hạng vô tình là cơ hội vàng: Google đang muốn xếp hạng website cho chủ đề đó, hãy tạo nội dung đáp ứng ngay." loading="lazy"><figcaption>Thứ hạng vô tình là cơ hội vàng: Google đang muốn xếp hạng website cho chủ đề đó, hãy tạo nội dung đáp ứng ngay.</figcaption></figure></section><section class="seg" id="s4" data-src="T04 T05"><h2>4. Nghiên cứu ca điển hình TheSprucePets.com: Lấp đầy khoảng trống để thống trị ngách</h2><p>Để minh chứng cho sức mạnh của việc lấp đầy khoảng trống và xử lý thứ hạng vô tình, Yoyao phân tích website khổng lồ hàng đầu thế giới về thú cưng: <b>TheSprucePets.com</b> (với hơn 5.510 trang được Google lập chỉ mục):</p>
+<ul>
+  <li>Khi phân tích cụm chủ đề về <i>Thức ăn cho chó (Dog Food)</i>, TheSprucePets đã viết được 7 bài trên tổng số 14 bài viết tiềm năng của cụm.</li>
+  <li>Có 2 bài viết về ngách dị ứng và thức ăn khô cho chó mà TheSprucePets chưa từng viết riêng, nhưng tên miền của họ vẫn vô tình xếp hạng trang 2.</li>
+  <li>Yoyao chỉ ra rằng: Nếu TheSprucePets chỉ cần viết thêm 2 bài viết này để lấp đầy khoảng trống của Silo, hai bài viết đó sẽ ngay lập tức chiếm lĩnh vị trí số 1 Google chỉ sau vài ngày nhờ nền tảng thẩm quyền tên miền sẵn có!</li>
+</ul>
+<p>Đây chính là bài học vô giá cho mọi nhà quản trị website: Luôn kiểm toán định kỳ, cắt tỉa các bài viết rác lỗi thời, cập nhật bài viết cũ và nhanh chóng lấp đầy các khoảng trống chủ đề để duy trì vị thế dẫn đầu tuyệt đối trên thương trường số.</p>
+<p>Một chiến lược nội dung chủ động và có kỷ luật sẽ bảo đảm website của bạn luôn phát triển bền vững và không ngừng gia tăng khoảng cách với mọi đối thủ cạnh tranh.</p>
+<p>Khi mọi bài viết đều có vị trí và vai trò rõ ràng trên bản đồ chủ đề, website của bạn sẽ hoạt động như một cỗ máy thu hút lưu lượng tìm kiếm tự nhiên mạnh mẽ và bền bỉ qua năm tháng.</p><figure><img src="photos/m08-l06-16.jpg" alt="Nghiên cứu điển hình TheSprucePets.com: Phân tích khoảng trống chủ đề thức ăn cho chó để chiếm lĩnh toàn bộ SERP." loading="lazy"><figcaption>Nghiên cứu điển hình TheSprucePets.com: Phân tích khoảng trống chủ đề thức ăn cho chó để chiếm lĩnh toàn bộ SERP.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 06-Cannibalization, Pruning, and Updating Content (Video bài học chính).</li>
+    <li>Đối chiếu ngữ nghĩa với bản tiếng Anh: <i>Bản Tiếng Anh/08-Content Creation Module/06-Cannibalization, Pruning, and Updating Content.mp4</i>.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
