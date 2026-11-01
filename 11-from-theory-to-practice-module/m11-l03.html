@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Practical Case Study: Step-by-Step Topical Map Creation (Part 1)</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Practical Case Study: Step-by-Step Topical Map Creation (Part 1)</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 11: From Theory to Practice Module</p>
+  <nav class="toc"><ol><li><a href="#sec-1">Bắt đầu Case Study: Lựa chọn Ngách và Phân tích Bối cảnh</a></li><li><a href="#sec-2">Khai thác Từ khóa Hạt giống (Seed Keywords) và Phân rã Chủ đề Lớn</a></li><li><a href="#sec-3">Trích xuất và So sánh Sitemap của Top 3 Đối thủ Cạnh tranh</a></li><li><a href="#sec-4">Xử lý Dữ liệu thô và Chuẩn hóa Danh sách Từ khóa</a></li></ol></nav>
+  <section id="sec-1"><h2>Bắt đầu Case Study: Lựa chọn Ngách và Phân tích Bối cảnh</h2><p>Trong video thực hành kéo dài hơn 22 phút này, Yoyao trực tiếp thao tác trên màn hình máy tính từ đầu đến cuối để xây dựng một Topical Map thực tế hoàn chỉnh.</p>
+<p>Dự án thực chiến bắt đầu bằng việc khảo sát một ngách thị trường cụ thể. Yoyao phân tích:</p>
+<ul>
+  <li>Quy mô thị trường và tiềm năng thương mại của các nhóm sản phẩm dịch vụ trong ngách.</li>
+  <li>Đánh giá sức mạnh của các đối thủ dẫn đầu hiện tại trên bảng xếp hạng Google.</li>
+  <li>Xác định phạm vi biên giới chủ đề (Topic Boundaries) để biết rõ website nên viết về cái gì và tuyệt đối không nên mở rộng sang cái gì nhằm tránh làm loãng thẩm quyền chuyên môn.</li>
+</ul>
+<p>Đây là buổi thực hành sống động giúp học viên hiểu rõ từng cú nhấp chuột và quyết định chiến lược trong điều kiện thực tế.</p><figure><img src="photos/m11-l03-01.jpg" alt="Giao diện bắt đầu dự án thực tế với việc nghiên cứu quy mô thị trường ngách và xác định phạm vi chuyên môn." loading="lazy"><figcaption>Giao diện bắt đầu dự án thực tế với việc nghiên cứu quy mô thị trường ngách và xác định phạm vi chuyên môn.</figcaption></figure></section><section id="sec-2"><h2>Khai thác Từ khóa Hạt giống (Seed Keywords) và Phân rã Chủ đề Lớn</h2><p>Yoyao sử dụng các công cụ nghiên cứu để nhập các từ khóa hạt giống ban đầu và bắt đầu bóc tách các tầng ý nghĩa:</p>
+<p>Từ một khái niệm cốt lõi, ông phân chia thành các mảng lớn tương ứng với các giai đoạn của hành trình khách hàng. Mỗi mảng lớn được đặt tên rõ ràng và gán vai trò chiến lược cụ thể.</p>
+<p>Quy trình phân rã trực quan này giúp người học nhìn thấy cách biến một ý tưởng kinh doanh trừu tượng thành một bộ khung kiến trúc nội dung rõ ràng, mạch lạc.</p><figure><img src="photos/m11-l03-02.jpg" alt="Các thao tác thu thập từ khóa hạt giống và phân tách thành các danh mục sơ khởi trên bảng tính." loading="lazy"><figcaption>Các thao tác thu thập từ khóa hạt giống và phân tách thành các danh mục sơ khởi trên bảng tính.</figcaption></figure></section><section id="sec-3"><h2>Trích xuất và So sánh Sitemap của Top 3 Đối thủ Cạnh tranh</h2><p>Tiếp theo, Yoyao tiến hành tải sitemap XML của 3 đối thủ mạnh nhất trong ngách về máy tính và đưa vào công cụ phân tích:</p>
+<ol>
+  <li>Lọc bỏ các trang hệ thống, chính sách, giỏ hàng để chỉ giữ lại các URL bài viết blog và danh mục sản phẩm.</li>
+  <li>Phân loại cấu trúc URL của đối thủ để xem họ đang tổ chức Silo như thế nào và đâu là những bài viết mang lại nhiều lưu lượng truy cập nhất cho họ.</li>
+  <li>Phát hiện các khoảng trống nội dung (Content Gaps) mà cả 3 đối thủ đều chưa khai thác sâu để biến đó thành lợi thế cạnh tranh áp đảo cho website của mình.</li>
+</ol>
+<p>Phương pháp đảo ngược kỹ thuật (Reverse Engineering) sitemap này giúp rút ngắn hàng tháng trời tự mò mẫm nội dung.</p><figure><img src="photos/m11-l03-03.jpg" alt="Phân tích file sitemap trích xuất từ đối thủ để tìm ra các lỗ hổng nội dung và chủ đề bị bỏ quên." loading="lazy"><figcaption>Phân tích file sitemap trích xuất từ đối thủ để tìm ra các lỗ hổng nội dung và chủ đề bị bỏ quên.</figcaption></figure></section><section id="sec-4"><h2>Xử lý Dữ liệu thô và Chuẩn hóa Danh sách Từ khóa</h2><p>Kết thúc phần 1 của Case Study, Yoyao hướng dẫn cách làm sạch dữ liệu trong Google Sheets:</p>
+<p>Hàng ngàn từ khóa thô tải về từ nhiều nguồn được gộp lại, loại bỏ trùng lặp (Deduplication), chuẩn hóa viết hoa viết thường và phân loại sơ bộ theo độ khó (Keyword Difficulty) cùng dung lượng tìm kiếm.</p>
+<p>Một bộ dữ liệu sạch là điều kiện tiên quyết để việc gom cụm ngữ nghĩa ở các bước tiếp theo diễn ra chính xác và nhanh chóng.</p><figure><img src="photos/m11-l03-04.jpg" alt="Bảng tính xử lý dữ liệu từ khóa thô, loại bỏ trùng lặp và phân nhóm theo độ khó cạnh tranh." loading="lazy"><figcaption>Bảng tính xử lý dữ liệu từ khóa thô, loại bỏ trùng lặp và phân nhóm theo độ khó cạnh tranh.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 11-From Theory to Practice Module/video 01.mp4 (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>

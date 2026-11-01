@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Practical Case Study: WordPress Site Setup &amp; Hierarchy Execution</title>
+  <style>
+:root{--bg:#fbfaf7;--fg:#1d1d1f;--muted:#5f6368;--line:#e3e0d8;--accent:#1f4e8c;--soft:#eef3fa;--warn:#fff6e0;--code:#f3f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--fg:#e8e6e1;--muted:#a3a19b;--line:#2d2f33;--accent:#8fb5ea;--soft:#1b2433;--warn:#2e2918;--code:#202226}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:780px;margin:0 auto;padding:32px 16px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0}
+h2{font-size:22px;margin:48px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 6px}
+.meta,figcaption,.src{color:var(--muted);font-size:14px}
+.meta{margin:2px 0}
+figure{margin:18px 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.diagram{background:var(--soft);border-radius:10px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block;color:var(--fg)}
+.note{background:var(--warn);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:15px}
+.prompt{position:relative;margin:16px 0;background:var(--code);border:1px solid var(--line);border-radius:10px}
+.prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:14px/1.6 ui-monospace,Menlo,monospace}
+.prompt .copy{position:absolute;top:8px;right:8px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-size:12px;padding:3px 10px;cursor:pointer}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.92em}
+nav.toc ol{padding-left:20px;font-size:15px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:12px}
+.back{font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">Về mục lục học phần</a></p>
+  <h1>Practical Case Study: WordPress Site Setup &amp; Hierarchy Execution</h1>
+  <p class="meta">Yoyao Hsueh · Chức danh chính thức: unverified</p>
+  <p class="meta">Topical Maps Unlocked 2.0 · Học phần 11: From Theory to Practice Module</p>
+  <nav class="toc"><ol><li><a href="#sec-1">Thiết lập Ban đầu trên WordPress cho Cấu trúc Topical Map</a></li><li><a href="#sec-2">Tạo Lập Cây Thư mục Danh mục (Categories) theo Chuẩn Silo</a></li><li><a href="#sec-3">Thiết kế Thanh Điều hướng Menu và Breadcrumbs Chuẩn SEO</a></li><li><a href="#sec-4">Kiểm tra Kỹ thuật Kiến trúc Trước khi Đăng Bài</a></li></ol></nav>
+  <section id="sec-1"><h2>Thiết lập Ban đầu trên WordPress cho Cấu trúc Topical Map</h2><p>Bài thực hành số 7 là video dài nhất học phần (hơn 24 phút), đưa học viên vào môi trường quản trị thực tế của <b>WordPress</b> để hiện thực hóa bản đồ chủ đề.</p>
+<p>Yoyao bắt đầu từ các thiết lập cốt lõi nhất:</p>
+<ul>
+  <li>Cấu hình đường dẫn tĩnh (Permalinks Settings) tối ưu cho SEO: <i>/%postname%/</i> hoặc cấu hình chuyên biệt có danh mục.</li>
+  <li>Cài đặt plugin hỗ trợ phân loại và quản trị cấu trúc taxonomy chuyên sâu.</li>
+  <li>Tối ưu hóa các trang chức năng hệ thống để đảm bảo website hoạt động mượt mà và bảo mật.</li>
+</ul>
+<p>Những thiết lập nền tảng này giúp website sẵn sàng tiếp nhận hàng trăm bài viết mà không gặp sự cố xung đột đường dẫn.</p><figure><img src="photos/m11-l07-01.jpg" alt="Giao diện cấu hình WordPress: Cài đặt đường dẫn tĩnh (Permalinks) và các thiết lập cơ bản chuẩn SEO." loading="lazy"><figcaption>Giao diện cấu hình WordPress: Cài đặt đường dẫn tĩnh (Permalinks) và các thiết lập cơ bản chuẩn SEO.</figcaption></figure></section><section id="sec-2"><h2>Tạo Lập Cây Thư mục Danh mục (Categories) theo Chuẩn Silo</h2><p>Yoyao trực tiếp tạo từng Danh mục mẹ và Danh mục con trên giao diện quản trị WordPress:</p>
+<ol>
+  <li>Thiết lập Danh mục mẹ đại diện cho các Silo lớn.</li>
+  <li>Tạo các Danh mục con gắn vào đúng Danh mục mẹ tương ứng.</li>
+  <li>Viết mô tả chuẩn SEO giàu ngữ nghĩa cho từng trang danh mục và gán hình ảnh đại diện chuyên nghiệp.</li>
+</ol>
+<p>Việc này biến các trang danh mục WordPress thành những trang đích (Hub Pages) có sức mạnh cạnh tranh thứ hạng rất cao trên Google.</p><figure><img src="photos/m11-l07-02.jpg" alt="Thao tác tạo Parent Categories và Child Categories trên WordPress khớp hoàn hảo với Topical Map." loading="lazy"><figcaption>Thao tác tạo Parent Categories và Child Categories trên WordPress khớp hoàn hảo với Topical Map.</figcaption></figure></section><section id="sec-3"><h2>Thiết kế Thanh Điều hướng Menu và Breadcrumbs Chuẩn SEO</h2><p>Hệ thống điều hướng là cầu nối quan trọng giữa người dùng và cấu trúc thông tin của website:</p>
+<p>Yoyao hướng dẫn cách đưa các Silo chính lên thanh menu đầu trang (Header Navigation) và menu chân trang (Footer). Cài đặt và định cấu hình hệ thống Breadcrumbs chuẩn schema để Google hiển thị rõ ràng đường dẫn phân tầng ngay trên kết quả tìm kiếm SERP.</p>
+<p>Điều này cải thiện đáng kể trải nghiệm người dùng và giúp bot tìm kiếm dễ dàng định vị vị trí của từng trang trong tổng thể website.</p><figure><img src="photos/m11-l07-03.jpg" alt="Cấu hình Menu điều hướng chính và hệ thống Breadcrumbs phản ánh chính xác cấu trúc phân tầng." loading="lazy"><figcaption>Cấu hình Menu điều hướng chính và hệ thống Breadcrumbs phản ánh chính xác cấu trúc phân tầng.</figcaption></figure></section><section id="sec-4"><h2>Kiểm tra Kỹ thuật Kiến trúc Trước khi Đăng Bài</h2><p>Kết thúc bài học, Yoyao tiến hành quét kiểm tra kỹ thuật toàn diện trang web WordPress mới tạo lập:</p>
+<p>Đảm bảo không có lỗi 404, không có trang mồ côi (Orphan Pages) và sitemap XML tự động cập nhật chính xác theo cấu trúc phân tầng mới tạo.</p>
+<p>Khung nhà đã hoàn thiện vững chãi, sẵn sàng cho việc đưa nội dung bài viết và liên kết nội bộ vào thi công.</p><figure><img src="photos/m11-l07-04.jpg" alt="Sử dụng các công cụ kiểm tra Technical SEO để quét lỗi liên kết gãy hoặc xung đột cấu trúc danh mục." loading="lazy"><figcaption>Sử dụng các công cụ kiểm tra Technical SEO để quét lỗi liên kết gãy hoặc xung đột cấu trúc danh mục.</figcaption></figure></section>
+  <h2>Nguồn và đối chiếu</h2>
+  <ul class="src">
+    <li>Topical Maps Unlocked 2.0 · 11-From Theory to Practice Module/video 6.mp4 (Video bài học chính).</li>
+    <li>Bản tiếng Anh không có video riêng cho bài học này; nội dung đối chiếu trực tiếp từ slide và video chính.</li>
+  </ul>
+  <footer><!--EVAL--><!--/EVAL--></footer>
+</main>
+<script>
+// Copy button on prompt blocks.
+[].forEach.call(document.querySelectorAll('.prompt'),function(p){var b=document.createElement('button');b.className='copy';b.textContent='Copy';p.appendChild(b);
+  b.onclick=function(){var t=p.querySelector('pre').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){var r=document.createRange();r.selectNodeContents(p.querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'});setTimeout(function(){b.textContent='Copy'},1500)}});
+</script>
+</body>
+</html>
